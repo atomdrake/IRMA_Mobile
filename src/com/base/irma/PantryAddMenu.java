@@ -1,6 +1,5 @@
 package com.base.irma;
 
-
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,54 +7,44 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
-public class PantryMainMenu extends MainActivity {
+public class PantryAddMenu extends MainActivity {
 	
-	Button AddNewButton;
-	Button MySuppliesButton;
-	EditText SearchText;
+	Button ScanButton;
+	Button ManualEntryButton;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.pantry_main_menu);
+		setContentView(R.layout.pantry_add_main);
+		
+		ScanButton = (Button) findViewById(R.id.AddButton);
+		ManualEntryButton = (Button) findViewById(R.id.CancelButton);
 		
 		
-		AddNewButton = (Button) findViewById(R.id.AddNewButton);
-		MySuppliesButton = (Button) findViewById(R.id.MySuppliesButton);
-		
-		//Not implemented, will probably end up using some kind of on focus listener and 
-		//running a sql query on things as they are entering unless we
-		//want to just add in a search button
-		SearchText =  (EditText) findViewById(R.id.SearchTextField);
-		
-		
-		AddNewButton.setOnClickListener(new View.OnClickListener() {
+		ScanButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(PantryMainMenu.this, "Going to add new menu...", Toast.LENGTH_LONG).show();	
+			Toast.makeText(PantryAddMenu.this, "Going to add scanner...", Toast.LENGTH_LONG).show();	
 			
-			Intent i = new Intent(PantryMainMenu.this, PantryAddMenu.class);
+			Intent i = new Intent(PantryAddMenu.this, PantryAddScanner.class);
 			startActivity(i);
 			
 			}
-		});// End AddNewButton Button
+		});// End ScanButton Button
 		
 		
-		MySuppliesButton.setOnClickListener(new View.OnClickListener() {
+		ManualEntryButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(PantryMainMenu.this, "View this user's exsisiting supplies...", Toast.LENGTH_LONG).show();		
+			Toast.makeText(PantryAddMenu.this, "Go to the manual entry page...", Toast.LENGTH_LONG).show();		
 			
 			}
-		});// End MySuppliesButton Button
-		
-		
+		});// End ManualEntryButton Button
 		
 		
 		

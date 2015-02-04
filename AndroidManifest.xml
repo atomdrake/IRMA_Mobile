@@ -30,6 +30,17 @@
             android:name=".PantryMainMenu"
             android:label="Pantry Menu" >            
         </activity>
+        
+        <activity
+            android:name=".PantryAddMenu"
+            android:label="Pantry - Add New" >            
+        </activity>
+        <activity
+            android:name=".PantryAddScanner"
+            android:label="Pantry - Add Scanner" >            
+        </activity>
+        
+        
     </application>
 
 </manifest>
