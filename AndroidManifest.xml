@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainMenu"
+            android:label="IRMA Main Menu" >            
+        </activity>
+        <activity
+            android:name=".PantryMainMenu"
+            android:label="Pantry Menu" >            
+        </activity>
     </application>
 
 </manifest>

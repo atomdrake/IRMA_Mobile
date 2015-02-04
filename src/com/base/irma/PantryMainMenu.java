@@ -1,5 +1,6 @@
 package com.base.irma;
 
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,40 +11,28 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity {
-
-	//Create some objects to use in here
-	EditText UserName;
-	EditText Password;
-	Button LoginButton;
+public class PantryMainMenu extends MainActivity {
 	
-	@Override
+	Button AddNewButton;
+	Button MySuppliesButton;
+	EditText SearchText;
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		
-		//Link the text fields we have to the objects we're creating for them
-		UserName = (EditText) findViewById(R.id.user_name_field);
-		Password = (EditText) findViewById(R.id.password_field);
-		LoginButton = (Button) findViewById(R.id.login_button);
-		
-		LoginButton.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-
-			Toast.makeText(MainActivity.this, "Logging in...", Toast.LENGTH_LONG).show();
-			//Connect to server with user name and password here
-			
-			Intent i = new Intent(MainActivity.this, MainMenu.class);
-			startActivity(i);
-			
-			}
-		});
+		setContentView(R.layout.pantry_main_menu);
 		
 		
-	}
-
+		AddNewButton = (Button) findViewById(R.id.AddNewButton);
+		MySuppliesButton = (Button) findViewById(R.id.MySuppliesButton);
+		
+		//Not implemented, will probably end up using some kind of on focus listener and 
+		//running a sql query on things as they are entering unless we
+		//want to just add in a search button
+		SearchText =  (EditText) findViewById(R.id.SearchTextField);
+		
+		
+	}//End onCreate
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -62,4 +51,6 @@ public class MainActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+
 }
