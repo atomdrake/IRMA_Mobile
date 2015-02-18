@@ -1637,12 +1637,12 @@ containing a value of this type.
     }
     public static final class id {
         public static final int AddButton=0x7f090046;
-        public static final int AddNewButton=0x7f09004a;
-        public static final int AllRecipes=0x7f090045;
+        public static final int AddNewButton=0x7f090049;
+        public static final int AllRecipes=0x7f090043;
         public static final int CancelButton=0x7f090047;
-        public static final int MyPantry=0x7f090043;
+        public static final int MyPantry=0x7f090045;
         public static final int MyRecipes=0x7f090044;
-        public static final int MySuppliesButton=0x7f090049;
+        public static final int MySuppliesButton=0x7f09004a;
         public static final int SearchTextField=0x7f090048;
         public static final int action_bar=0x7f090031;
         public static final int action_bar_activity_content=0x7f090003;
@@ -1765,9 +1765,10 @@ containing a value of this type.
         public static final int activity_main=0x7f030017;
         public static final int main_menu=0x7f030018;
         public static final int pantry_add_main=0x7f030019;
-        public static final int pantry_add_scanner=0x7f03001a;
-        public static final int pantry_main_menu=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
+        public static final int pantry_add_manual=0x7f03001a;
+        public static final int pantry_add_scanner=0x7f03001b;
+        public static final int pantry_main_menu=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

@@ -39,6 +39,10 @@
             android:name=".PantryAddScanner"
             android:label="Pantry - Add Scanner" >            
         </activity>
+        <activity
+            android:name=".PantryAddManual"
+            android:label="Pantry - Add Manual" >            
+        </activity>
         
         
     </application>

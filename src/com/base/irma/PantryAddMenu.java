@@ -41,7 +41,11 @@ public class PantryAddMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(PantryAddMenu.this, "Go to the manual entry page...", Toast.LENGTH_LONG).show();		
+			Toast.makeText(PantryAddMenu.this, "Go to the manual entry page...", Toast.LENGTH_LONG).show();	
+			
+			Intent i = new Intent(PantryAddMenu.this, PantryAddManual.class);
+			startActivity(i);
+			
 			
 			}
 		});// End ManualEntryButton Button
