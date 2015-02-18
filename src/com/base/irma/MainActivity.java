@@ -1,5 +1,5 @@
 package com.base.irma;
-//testing
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,39 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+/*
+ public static void main(String[] args) {
+EventQueue.invokeLater(new Runnable() {
+public void run() {
+if(Connection.Connect() == false) {
+JOptionPane.showMessageDialog(null, "Error connecting to the database.");
+}
+else
+try {
+Login_Screen window = new Login_Screen();
+window.frmKds.setVisible(true);
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+});
+} 
+  
+ 
+ */
+
 public class MainActivity extends ActionBarActivity {
+	
+		//if(Connection.Connect() == false)
+		//{
+			//System.out.println("Failed Connection");
+		//	Toast.makeText(MainActivity.this, "Error connecting", Toast.LENGTH_LONG).show();
+			
+	//	}
+		
+		
+	
 
 	//Create some objects to use in here
 	EditText UserName;
@@ -35,10 +67,15 @@ public class MainActivity extends ActionBarActivity {
 			Toast.makeText(MainActivity.this, "Logging in...", Toast.LENGTH_LONG).show();
 			//Connect to server with user name and password here
 			
+			connectToServer();
+			
+			//goes into the next page
 			Intent i = new Intent(MainActivity.this, MainMenu.class);
 			startActivity(i);
 			
 			}
+
+
 		});
 		
 		
@@ -62,4 +99,23 @@ public class MainActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	private void connectToServer() {
+		
+		
+		if(Connection.Connect() == false)
+			{
+				//System.out.println("Failed Connection");
+				Toast.makeText(MainActivity.this, "Error connecting", Toast.LENGTH_LONG).show();
+				Toast.makeText(MainActivity.this, Connection.message, Toast.LENGTH_LONG).show();
+				
+			}
+		else
+		{
+			Toast.makeText(MainActivity.this, "Connection Successful", Toast.LENGTH_LONG).show();			
+		}
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
