@@ -1,6 +1,14 @@
 package com.base.irma;
+//http://www.tutorialspoint.com/android/android_php_mysql.htm
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 
 import android.support.v7.app.ActionBarActivity;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,28 +17,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.os.StrictMode;
 
-
-/*
- public static void main(String[] args) {
-EventQueue.invokeLater(new Runnable() {
-public void run() {
-if(Connection.Connect() == false) {
-JOptionPane.showMessageDialog(null, "Error connecting to the database.");
-}
-else
-try {
-Login_Screen window = new Login_Screen();
-window.frmKds.setVisible(true);
-} catch (Exception e) {
-e.printStackTrace();
-}
-}
-});
-} 
-  
- 
- */
 
 public class MainActivity extends ActionBarActivity {
 	
@@ -42,7 +30,6 @@ public class MainActivity extends ActionBarActivity {
 	//	}
 		
 		
-	
 
 	//Create some objects to use in here
 	EditText UserName;
@@ -51,6 +38,7 @@ public class MainActivity extends ActionBarActivity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+				
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
@@ -66,8 +54,8 @@ public class MainActivity extends ActionBarActivity {
 
 			Toast.makeText(MainActivity.this, "Logging in...", Toast.LENGTH_LONG).show();
 			//Connect to server with user name and password here
-			
-			connectToServer();
+			String tmp = Login.doInBackground();
+			Toast.makeText(MainActivity.this, tmp, Toast.LENGTH_LONG).show();
 			
 			//goes into the next page
 			Intent i = new Intent(MainActivity.this, MainMenu.class);
@@ -99,23 +87,6 @@ public class MainActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
-	private void connectToServer() {
-		
-		
-		if(Connection.Connect() == false)
-			{
-				//System.out.println("Failed Connection");
-				Toast.makeText(MainActivity.this, "Error connecting", Toast.LENGTH_LONG).show();
-				Toast.makeText(MainActivity.this, Connection.message, Toast.LENGTH_LONG).show();
-				
-			}
-		else
-		{
-			Toast.makeText(MainActivity.this, "Connection Successful", Toast.LENGTH_LONG).show();			
-		}
-		// TODO Auto-generated method stub
-		
-	}
-	
 }
+	
+	
