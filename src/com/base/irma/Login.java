@@ -14,33 +14,34 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Login  extends AsyncTask<String,Void,String>{
 
-   private TextView statusField,roleField;
-   private Context context;
-   private int byGetOrPost = 0; 
-   //flag 0 means get and 1 means post.(By default it is get.)
-   public Login(Context context,TextView statusField,
-   TextView roleField,int flag) {
-      this.context = context;
-      this.statusField = statusField;
-      this.roleField = roleField;
-      byGetOrPost = flag;
+	public static boolean result = false;
+	public static boolean complete = false;
+	public static boolean loginsuccess;
+	public static String err;
+   private Context context;  
+   //
+   public Login(Context context) {
+      this.context = context;      
    }
 
-   protected void onPreExecute(){
+
+protected void onPreExecute(){
 
    }
-   protected static String doInBackground() {          
-           
+ 
+   protected  String doInBackground(String... arg0) {    
+	   Log.i("You bitch", "i hate you");
 	   try{
-           String username = "test";
-           String password = "test";
-           //String link="http://54.69.205.117/includes/mobile_login.php?username="+username+"&password="+password;
-           String link = "http://54.69.205.117/includes/mobile_login.php?username=test&password=test";
+           String username = (String)arg0[0];
+           String password = (String)arg0[1];		   
+           String link = "http://54.69.205.117/includes/mobile_login.php?username=" + username + "&password=" + password;           
            URL url = new URL(link);
            HttpClient client = new DefaultHttpClient();
            HttpGet request = new HttpGet();
@@ -48,31 +49,68 @@ public class Login  extends AsyncTask<String,Void,String>{
            HttpResponse response = client.execute(request);
            BufferedReader in = new BufferedReader
           (new InputStreamReader(response.getEntity().getContent()));
-
+         // System.out.println("###" + response.getEntity().getContent());
           StringBuffer sb = new StringBuffer("");
           String line="";
           while ((line = in.readLine()) != null) {
-             sb.append(line);
-             break;
+            sb.append(line);
+            break;
            }
+           if(sb.toString().equals(username))
+           {
+           //Log.i("MyActivity", "MyClass.getView() — get item number " + position);
+           Log.i("YOUUUUUU", sb.toString());
+           err = "Good";
            in.close();
-           return sb.toString();
+           result = true;
+           return "true";
+           }
+           else
+           {
+        	   Log.i("YOUUUUUU", "SUCK");
+        	result = false;
+        	return "false";
+        	   
+           }
+           
+           
+           //return sb.toString();
+           
      }catch(Exception e){
-        return new String("Exception: " + e.getMessage());
+        err = "Exception: " + e.getMessage();        
+    	 result = false;
+    	    	 
      }
-	
-     }
-      
+	//return null;
+	   complete = true;
+	return null;
+  }
    
    @Override
-   protected void onPostExecute(String result){
-      this.statusField.setText("Login Successful");
-      this.roleField.setText(result);
-   }
+   protected void onPostExecute(String result2){
+	   
+	   Success(result);
 
-@Override
-protected String doInBackground(String... params) {
-	// TODO Auto-generated method stub
-	return null;
+   }
+   
+public static void Success(boolean result)
+{
+	//Log.i("You bitch", "i love you");
+	if(result == true)
+	{
+		//return true;
+		Log.i("You bitch", "i really love you");
+		loginsuccess = true;
+	}
+	else
+	{
+		//return false;
+		Log.i("You bitch", "go die");
+		loginsuccess = false;
+		
+	}
+	
 }
+
+
 }

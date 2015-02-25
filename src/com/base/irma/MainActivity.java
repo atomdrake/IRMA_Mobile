@@ -6,6 +6,7 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.util.concurrent.TimeUnit;
 
 import android.support.v7.app.ActionBarActivity;
 import android.annotation.SuppressLint;
@@ -22,19 +23,14 @@ import android.os.StrictMode;
 
 public class MainActivity extends ActionBarActivity {
 	
-		//if(Connection.Connect() == false)
-		//{
-			//System.out.println("Failed Connection");
-		//	Toast.makeText(MainActivity.this, "Error connecting", Toast.LENGTH_LONG).show();
-			
-	//	}
-		
-		
+	
 
 	//Create some objects to use in here
 	EditText UserName;
 	EditText Password;
 	Button LoginButton;
+	String user;
+	String pw;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +49,26 @@ public class MainActivity extends ActionBarActivity {
 			public void onClick(View v) {
 
 			Toast.makeText(MainActivity.this, "Logging in...", Toast.LENGTH_LONG).show();
-			//Connect to server with user name and password here
-			String tmp = Login.doInBackground();
-			Toast.makeText(MainActivity.this, tmp, Toast.LENGTH_LONG).show();
-			
+			//Connect to server with user name and password here			
+			//String res = Login.doInBackground("test");
+			user = UserName.getText().toString();
+			pw = Password.getText().toString();
+			Login(user,pw);
+			try {
+				
+					Thread.sleep(500);
+								
+			} catch(InterruptedException ex) {
+			    Thread.currentThread().interrupt();
+			}
+			Toast.makeText(MainActivity.this, "Error = " + Login.err, Toast.LENGTH_LONG).show();
+			Toast.makeText(MainActivity.this, "Boolean = " + Login.result, Toast.LENGTH_LONG).show();			
+			if(Login.result == true)
+			{
 			//goes into the next page
 			Intent i = new Intent(MainActivity.this, MainMenu.class);
 			startActivity(i);
+			}
 			
 			}
 
@@ -67,6 +76,12 @@ public class MainActivity extends ActionBarActivity {
 		});
 		
 		
+	}
+	
+	public void Login(String user, String pw)
+	{
+		
+		new Login(this).execute(user,pw);
 	}
 
 	@Override
