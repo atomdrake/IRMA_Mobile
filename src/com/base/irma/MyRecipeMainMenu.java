@@ -11,19 +11,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class PantryMainMenu extends MainActivity {
+public class MyRecipeMainMenu extends MainActivity {
 	
-	Button AddNewButton;
-	Button MySuppliesButton;
+	Button TypeButton;
+	Button TimeButton;
+	Button RegionButton;
 	EditText SearchText;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.pantry_main_menu);
+		setContentView(R.layout.my_recipes_main_menu);
 		
 		
-		AddNewButton = (Button) findViewById(R.id.Time_Button);
-		MySuppliesButton = (Button) findViewById(R.id.Region_Button);
+		TypeButton = (Button) findViewById(R.id.Type_Button);
+		TimeButton = (Button) findViewById(R.id.Time_Button);
+		RegionButton = (Button) findViewById(R.id.Region_Button);
 		
 		//Not implemented, will probably end up using some kind of on focus listener and 
 		//running a sql query on things as they are entering unless we
@@ -31,30 +33,38 @@ public class PantryMainMenu extends MainActivity {
 		SearchText =  (EditText) findViewById(R.id.SearchTextField);
 		
 		
-		AddNewButton.setOnClickListener(new View.OnClickListener() {
+		TypeButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(PantryMainMenu.this, "Going to add new menu...", Toast.LENGTH_LONG).show();	
+			Toast.makeText(MyRecipeMainMenu.this, "Display user recipes by type...", Toast.LENGTH_LONG).show();	
 			
-			Intent i = new Intent(PantryMainMenu.this, PantryAddMenu.class);
-			startActivity(i);
+		
 			
 			}
-		});// End AddNewButton Button
+		});// End TypeButton Button
 		
 		
-		MySuppliesButton.setOnClickListener(new View.OnClickListener() {
+		TimeButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(PantryMainMenu.this, "View this user's exsisiting supplies...", Toast.LENGTH_LONG).show();		
+			Toast.makeText(MyRecipeMainMenu.this, "Display user recipes by time...", Toast.LENGTH_LONG).show();		
 			
 			}
-		});// End MySuppliesButton Button
+		});// End TimeButton Button
 		
+		RegionButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+
+			Toast.makeText(MyRecipeMainMenu.this, "Display user recipes by region...", Toast.LENGTH_LONG).show();		
+			
+			}
+		});// End RegionButton Button
 		
 		
 		
