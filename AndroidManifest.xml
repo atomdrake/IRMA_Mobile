@@ -43,6 +43,14 @@
             android:name=".PantryAddManual"
             android:label="Pantry - Add Manual" >            
         </activity>
+        <activity
+            android:name=".MyRecipeMainMenu"
+            android:label="My Recipes Menu" >            
+        </activity>
+        <activity
+            android:name=".AllRecipeMainMenu"
+            android:label="All Recipes Menu" >            
+        </activity>
         
         
     </application>
