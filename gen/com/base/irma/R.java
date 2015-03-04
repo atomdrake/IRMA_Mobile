@@ -1634,13 +1634,18 @@ containing a value of this type.
         public static final int abc_textfield_search_material=0x7f020032;
         public static final int ic_launcher=0x7f020033;
         public static final int irma_temp_logo=0x7f020034;
+        public static final int item_add_background=0x7f020035;
     }
     public static final class id {
         public static final int AddButton=0x7f09004d;
         public static final int AllRecipes=0x7f09004a;
+        public static final int Barcode_field=0x7f090054;
         public static final int CancelButton=0x7f09004e;
+        public static final int Carb_field=0x7f090051;
+        public static final int Fat_field=0x7f090052;
         public static final int MyPantry=0x7f09004c;
         public static final int MyRecipes=0x7f09004b;
+        public static final int Protein_field=0x7f090053;
         public static final int Region_Button=0x7f090045;
         public static final int ScanButton=0x7f090049;
         public static final int SearchTextField=0x7f090043;
@@ -1659,10 +1664,11 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09002e;
         public static final int action_mode_bar_stub=0x7f09002d;
         public static final int action_mode_close_button=0x7f090020;
-        public static final int action_settings=0x7f09004f;
+        public static final int action_settings=0x7f090055;
         public static final int activity_chooser_view_content=0x7f090021;
         public static final int always=0x7f090014;
         public static final int beginning=0x7f09001b;
+        public static final int calorie_field=0x7f090050;
         public static final int cameraPreview=0x7f090047;
         public static final int checkbox=0x7f090029;
         public static final int collapseActionView=0x7f090015;
@@ -1685,6 +1691,7 @@ containing a value of this type.
         public static final int list_item=0x7f090025;
         public static final int login_button=0x7f090042;
         public static final int middle=0x7f09001d;
+        public static final int name_field=0x7f09004f;
         public static final int never=0x7f090017;
         public static final int none=0x7f09000f;
         public static final int normal=0x7f09000b;
