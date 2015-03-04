@@ -6,6 +6,5 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="lib" path="libs/zbar.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/CameraTestActivity"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

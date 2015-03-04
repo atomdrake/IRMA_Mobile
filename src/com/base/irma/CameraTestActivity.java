@@ -6,7 +6,7 @@
  */
 package com.base.irma;
 
-import net.sourceforge.zbar.android.CameraTest.CameraPreview;
+//import net.sourceforge.zbar.android.CameraTest.CameraPreview;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
@@ -36,7 +36,7 @@ import net.sourceforge.zbar.Symbol;
 import net.sourceforge.zbar.SymbolSet;
 import net.sourceforge.zbar.Config;
 
-public class CameraTestActivity extends Activity
+public class CameraTestActivity extends MainActivity
 {
     private Camera mCamera;
     private CameraPreview mPreview;

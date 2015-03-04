@@ -29,7 +29,8 @@ public class PantryAddMenu extends MainActivity {
 			public void onClick(View v) {
 				Toast.makeText(PantryAddMenu.this, "Going to add scanner...", Toast.LENGTH_LONG).show();
 				
-				Intent i = new Intent(PantryAddMenu.this, CameraPreview.class);
+				//Intent i = new Intent(PantryAddMenu.this, CameraPreview.class);
+				Intent i = new Intent(PantryAddMenu.this, CameraTestActivity.class);
 				startActivity(i);
 				//Intent intent = new Intent(PantryAddMenu.this, ZBarScannerActivity.class);
 				//startActivityForResult(intent, ZBAR_SCANNER_REQUEST);
