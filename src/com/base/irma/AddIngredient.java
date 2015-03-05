@@ -2,12 +2,8 @@ package com.base.irma;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.net.URI;
 import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -16,25 +12,31 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View.OnClickListener;
-import android.widget.TextView;
-import android.widget.Toast;
 
-public class Login  extends AsyncTask<String,Void,String>{
+public class AddIngredient  extends AsyncTask<String,Void,String>{
 
 	public static boolean result = false;
+	public static String insertResult = "";
 
-   public Login(Context context) {      
+   public AddIngredient(Context context) {      
    }
 
 
-   protected  String doInBackground(String... arg0) {   
+   protected  String doInBackground(String... arg0){   
 	   
 	   try{
-           String username = (String)arg0[0];
-           String password = (String)arg0[1];		   
-           String link = "http://54.69.205.117/includes/mobile_login.php?username=" + username + "&password=" + password;           
+           String username = MainActivity.Username;           		
+           String ingredient = (String)arg0[0];
+           String groceryaisle = (String)arg0[1];
+           int quantity = Integer.parseInt((String)arg0[2]);
+           int alcohol = Integer.parseInt((String)arg0[3]);
+           int calorie = Integer.parseInt((String)arg0[4]);
+           int carb = Integer.parseInt((String)arg0[5]);  
+           int fat = Integer.parseInt((String)arg0[6]);
+           int protein = Integer.parseInt((String)arg0[7]);
+           String link = "http://54.69.205.117/includes/mobile_process_ingredient.php?username="+username+"&ingredient="+ingredient+"&groceryisle="+groceryaisle+"&quantity="+quantity+"&alcohol="+alcohol+"&calorie="+calorie+"&carbohydrate="+carb+"&fat="+fat+"&protein="+protein;          
            new URL(link);
+           Log.i(username, "my informational message");
            HttpClient client = new DefaultHttpClient();
            HttpGet request = new HttpGet();
            request.setURI(new URI(link));
@@ -47,12 +49,12 @@ public class Login  extends AsyncTask<String,Void,String>{
             sb.append(line);
             break;
            }
-           if(sb.toString().equals(username))
-           {           
-         
+          Log.i(sb.toString(), "SB to String");
+           if(sb.toString().equals("Success"))
+           {      
            in.close();
            result = true;
-           MainActivity.Username = username;
+           insertResult = ingredient + " has successfully been inserted";
            return "true";
            }
            else

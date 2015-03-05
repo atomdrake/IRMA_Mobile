@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends ActionBarActivity {
 	
 	public static boolean connection = false;
-
+	public static String Username;
 	//Create some objects to use in here
 	EditText UserName;
 	EditText Password;
