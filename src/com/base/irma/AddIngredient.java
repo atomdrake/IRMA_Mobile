@@ -57,10 +57,18 @@ public class AddIngredient  extends AsyncTask<String,Void,String>{
            insertResult = ingredient + " has successfully been inserted";
            return "true";
            }
+           else if(sb.toString().equals("Duplicate"))
+           {
+        	    result = false;
+        	    insertResult = ingredient + " is already in your database.";
+           		return "false";
+           }
            else
            {
+        insertResult = ingredient + " failed to insert. Please try again.";
         	result = false;
-        	return "false";        	   
+        	return "false";        
+        	
            }
            
      }catch(Exception e){

@@ -107,7 +107,7 @@ public class PantryAddManual extends MainActivity {
 		}
 		else
 		{
-			Toast.makeText(PantryAddManual.this, "Error inserting into database.", Toast.LENGTH_LONG).show();
+			Toast.makeText(PantryAddManual.this, AddIngredient.insertResult, Toast.LENGTH_LONG).show();
 			
 		}
 	}
