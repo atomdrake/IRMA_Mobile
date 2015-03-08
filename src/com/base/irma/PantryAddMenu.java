@@ -1,5 +1,7 @@
 package com.base.irma;
 
+import com.dm.zbar.android.scanner.ZBarScannerActivity;
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 
 public class PantryAddMenu extends MainActivity {
 	
+	protected static final int ZBAR_SCANNER_REQUEST = 0;
 	Button ScanButton;
 	Button ManualEntryButton;
 	
@@ -26,22 +29,16 @@ public class PantryAddMenu extends MainActivity {
 		
 			
 			@Override
-			public void onClick(View v) {
-				Toast.makeText(PantryAddMenu.this, "Going to add scanner...", Toast.LENGTH_LONG).show();
+			public void onClick(View v) {				
+		
 				
-				//Intent i = new Intent(PantryAddMenu.this, CameraPreview.class);
-				Intent i = new Intent(PantryAddMenu.this, CameraTestActivity.class);
-				startActivity(i);
-				//Intent intent = new Intent(PantryAddMenu.this, ZBarScannerActivity.class);
-				//startActivityForResult(intent, ZBAR_SCANNER_REQUEST);
-			/*
-			Toast.makeText(PantryAddMenu.this, "Going to add scanner...", Toast.LENGTH_LONG).show();	
+				//Need to get this to return results and push a new activity with the bar code, currently just scans 
+				Intent intent = new Intent(PantryAddMenu.this, ZBarScannerActivity.class);
+				startActivityForResult(intent, ZBAR_SCANNER_REQUEST);
 			
-			Intent i = new Intent(PantryAddMenu.this, PantryAddScanner.class);
-			startActivity(i);
-			*/
 			}
-		});// End ScanButton Button
+		});// End ScanButton Button		
+		
 		
 		
 		ManualEntryButton.setOnClickListener(new View.OnClickListener() {

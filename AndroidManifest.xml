@@ -65,6 +65,10 @@
             android:label="Camera Test" >            
         </activity>
         
+        <activity android:name="com.dm.zbar.android.scanner.ZBarScannerActivity"
+        android:screenOrientation="landscape"
+        android:label="Scanning" />
+        
         
     </application>
 

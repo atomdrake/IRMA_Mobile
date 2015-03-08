@@ -62,15 +62,8 @@ public class PantryAddManual extends MainActivity {
 			
 			//Push the gathered info to the database (good luck Travis)
 			push_to_database();
-			
-
-			
 
 			}
-
-
-
-
 		});// End AddButton Button
 		
 		
