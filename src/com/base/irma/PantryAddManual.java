@@ -24,12 +24,15 @@ public class PantryAddManual extends MainActivity {
 	String fat_count = "0";	
 	String protein_count = "0";
 	String barcode = "0";
-	EditText Item_Name_Field;
+	EditText item_Name_Field;
 	EditText calorie_field;
 	EditText carb_field;
 	EditText fat_field;
 	EditText protein_field;
 	EditText barcode_field;
+	EditText aisle_field;
+	EditText quantity_field;
+	EditText alcohol_field;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,13 +40,15 @@ public class PantryAddManual extends MainActivity {
 		
 		AddButton = (Button) findViewById(R.id.AddButton);
 		CancelButton = (Button) findViewById(R.id.CancelButton);
-		Item_Name_Field = (EditText) findViewById(R.id.name_field);
-		calorie_field = (EditText) findViewById(R.id.calorie_field);
+		item_Name_Field = (EditText) findViewById(R.id.Name_field);
+		calorie_field = (EditText) findViewById(R.id.Calorie_field);
 		carb_field = (EditText) findViewById(R.id.Carb_field);
 		fat_field = (EditText) findViewById(R.id.Fat_field);
 		protein_field = (EditText) findViewById(R.id.Protein_field);
 		barcode_field = (EditText) findViewById(R.id.Barcode_field);
-		
+		aisle_field = (EditText) findViewById(R.id.Aisle_field);
+		quantity_field = (EditText) findViewById(R.id.Quantity_field);
+		alcohol_field = (EditText) findViewById(R.id.Alcohol_field);
 		
 		//Once we have data added in we can enable this button
 		//AddButton.setEnabled(false);
@@ -115,12 +120,15 @@ public class PantryAddManual extends MainActivity {
 	//assign the data to the proper field
 	private void gather_strings() {
 		
-		Item_Name = Item_Name_Field.getText().toString();
+		Item_Name = item_Name_Field.getText().toString();
 		calorie_count = calorie_field.getText().toString();
 		carb_count = carb_field.getText().toString();
 		fat_count = fat_field.getText().toString();	
 		protein_count = protein_field.getText().toString();
 		barcode = barcode_field.getText().toString();
+		GroceryAisle = aisle_field.getText().toString();
+		quantity = quantity_field.getText().toString();
+		alcohol = alcohol_field.getText().toString(); 
 		
 		//Test the input
 		//Toast.makeText(PantryAddManual.this, "Entered: " + Item_Name + ", " + calorie_count + ", "

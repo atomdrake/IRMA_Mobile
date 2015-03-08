@@ -1,9 +1,11 @@
 package com.base.irma;
 
+import com.dm.zbar.android.scanner.ZBarConstants;
 import com.dm.zbar.android.scanner.ZBarScannerActivity;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,9 +13,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+
+
 public class PantryAddMenu extends MainActivity {
 	
-	protected static final int ZBAR_SCANNER_REQUEST = 0;
+
 	Button ScanButton;
 	Button ManualEntryButton;
 	
@@ -31,12 +35,21 @@ public class PantryAddMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {				
 		
+/*				//Check for the camera first
+				if ( isCameraAvailable() ) {					
+					//Need to get this to return results and push a new activity with the bar code, currently just scans 
+					Intent intent = new Intent(PantryAddMenu.this, ZBarScannerActivity.class);
+					startActivityForResult(intent, ZBAR_SCANNER_REQUEST);					
+				}
+				else {					
+		           Toast.makeText(PantryAddMenu.this, "Rear Facing Camera Unavailable", Toast.LENGTH_SHORT).show();
+		        }	
+*/				
+				Intent i = new Intent(PantryAddMenu.this, PantryAddScanner.class);
+				startActivity(i);
 				
-				//Need to get this to return results and push a new activity with the bar code, currently just scans 
-				Intent intent = new Intent(PantryAddMenu.this, ZBarScannerActivity.class);
-				startActivityForResult(intent, ZBAR_SCANNER_REQUEST);
-			
 			}
+
 		});// End ScanButton Button		
 		
 		
@@ -57,14 +70,15 @@ public class PantryAddMenu extends MainActivity {
 		
 		
 		
-	}//End onCreate
+	}//End onCreate	
+
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
-	}
+	}	
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
