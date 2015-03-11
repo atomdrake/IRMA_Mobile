@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -133,6 +134,8 @@ public class PantryAddScanner extends MainActivity {
             Toast.makeText(this, "Scan Result = " + data.getStringExtra(ZBarConstants.SCAN_RESULT), Toast.LENGTH_SHORT).show();
             Toast.makeText(this, "Scan Result Type = " + data.getIntExtra(ZBarConstants.SCAN_RESULT_TYPE, 0), Toast.LENGTH_SHORT).show();
             // The value of type indicates one of the symbols listed in Advanced Options below.
+            barcode = data.getStringExtra(ZBarConstants.SCAN_RESULT);
+            
             testBarcode(data);
             
         } else if(resultCode == RESULT_CANCELED) {
@@ -145,10 +148,30 @@ public class PantryAddScanner extends MainActivity {
 	private void testBarcode(Intent data) {
 
 		//unlock the Add button
-		AddButton.setEnabled(true);
+		//AddButton.setEnabled(true);
 		
 		//Put the barcode data into the text field
-		barcode_field.setText(data.getStringExtra(ZBarConstants.SCAN_RESULT));
+		//barcode_field.setText(data.getStringExtra(ZBarConstants.SCAN_RESULT));
+		
+		AddIngredient_Scan(barcode);
+		try {				
+			Thread.sleep(1000);
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}	
+		
+		//Found in database
+		if(AddIngredient_Scan.result == true)
+		{
+			 Toast.makeText(this, "Found UPC in database: " + data.getStringExtra(ZBarConstants.SCAN_RESULT) , Toast.LENGTH_SHORT).show();
+
+		}
+		else
+		{
+			AddButton.setEnabled(true);
+			barcode_field.setText(data.getStringExtra(ZBarConstants.SCAN_RESULT));
+			
+		}
 		
 		/*
 		if(narcode is in database)
@@ -157,6 +180,12 @@ public class PantryAddScanner extends MainActivity {
 		}
 		*/
 		
+	}
+	
+	public void AddIngredient_Scan(String barcode)
+	{
+		
+		new AddIngredient_Scan(this).execute(barcode);
 	}
 
 }

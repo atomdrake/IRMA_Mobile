@@ -3,6 +3,8 @@
 	<name>IRMA</name>
 	<comment></comment>
 	<projects>
+		<project>android-support-v7-appcompat</project>
+		<project>ZBarScannerActivity</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
