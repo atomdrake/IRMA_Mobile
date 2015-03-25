@@ -68,6 +68,10 @@
             android:name=".CameraTestActivity"
             android:label="Camera Test" >            
         </activity>
+        <activity
+            android:name=".MyRecipeTypeMainMenu"
+            android:label="My Recipes by Type" >            
+        </activity>  
         
         <activity android:name="com.dm.zbar.android.scanner.ZBarScannerActivity"
         android:screenOrientation="landscape"

@@ -52,7 +52,7 @@ public class PantryAddScanner extends MainActivity {
 		
 		AddButton = (Button) findViewById(R.id.AddButton);
 		CancelButton = (Button) findViewById(R.id.CancelButton);
-		ScanButton = (Button) findViewById(R.id.button1);	
+		ScanButton = (Button) findViewById(R.id.Breakfast_Button);	
 		item_Name_Field = (EditText) findViewById(R.id.Name_field);
 		calorie_field = (EditText) findViewById(R.id.Calorie_field);
 		carb_field = (EditText) findViewById(R.id.Carb_field);
