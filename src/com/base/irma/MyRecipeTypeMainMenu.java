@@ -20,6 +20,8 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 	Button SnackButton;
 	Button OtherButton;
 
+	//Type being selected stored in a string.
+	static String TypeSelected;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,6 +48,12 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 			public void onClick(View v) {
 
 			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Breakfast Recipes...", Toast.LENGTH_LONG).show();	
+			
+			TypeSelected = "Breakfast";
+			
+			//Launch the MyTypeRecipeSelection activity
+			Intent i = new Intent(MyRecipeTypeMainMenu.this, MyTypeRecipeSelection.class);
+			startActivity(i);
 		
 			
 			}
@@ -57,7 +65,13 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Lunch Recipes...", Toast.LENGTH_LONG).show();		
+			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Lunch Recipes...", Toast.LENGTH_LONG).show();	
+			
+			TypeSelected = "Lunch";
+			
+			//Launch the MyTypeRecipeSelection activity
+			Intent i = new Intent(MyRecipeTypeMainMenu.this, MyTypeRecipeSelection.class);
+			startActivity(i);
 			
 			}
 		});// End LunchButton Button
@@ -69,6 +83,12 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 
 			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Dinner Recipes...", Toast.LENGTH_LONG).show();		
 			
+			TypeSelected = "Dinner";
+			
+			//Launch the MyTypeRecipeSelection activity
+			Intent i = new Intent(MyRecipeTypeMainMenu.this, MyTypeRecipeSelection.class);
+			startActivity(i);
+			
 			}
 		});// End DinnerButton Button
 		
@@ -77,7 +97,13 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Dessert Recipes...", Toast.LENGTH_LONG).show();		
+			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Dessert Recipes...", Toast.LENGTH_LONG).show();	
+			
+			TypeSelected = "Dessert";
+			
+			//Launch the MyTypeRecipeSelection activity
+			Intent i = new Intent(MyRecipeTypeMainMenu.this, MyTypeRecipeSelection.class);
+			startActivity(i);
 			
 			}
 		});// End DessertButton Button
@@ -87,7 +113,13 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Snack Recipes...", Toast.LENGTH_LONG).show();		
+			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Snack Recipes...", Toast.LENGTH_LONG).show();	
+			
+			TypeSelected = "Snack";
+			
+			//Launch the MyTypeRecipeSelection activity
+			Intent i = new Intent(MyRecipeTypeMainMenu.this, MyTypeRecipeSelection.class);
+			startActivity(i);
 			
 			}
 		});// End SnackButton Button
@@ -98,6 +130,12 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 			public void onClick(View v) {
 
 			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Other Recipes...", Toast.LENGTH_LONG).show();		
+			
+			TypeSelected = "Other";
+			
+			//Launch the MyTypeRecipeSelection activity
+			Intent i = new Intent(MyRecipeTypeMainMenu.this, MyTypeRecipeSelection.class);
+			startActivity(i);
 			
 			}
 		});// End OtherButton Button
