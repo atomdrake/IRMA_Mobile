@@ -4,9 +4,14 @@ package com.base.irma;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,7 +53,15 @@ public class MyTypeRecipeSelection extends MainActivity {
 		
 		//******* Create an arrayList of recipes and then adapt it for use for, and set it in the RecipeList ListView ********
 		recipeNameList = new ArrayList<String>();
-		recipeIDList = new ArrayList<Integer>();
+		recipeIDList = new ArrayList<Integer>();		
+	
+		
+		MyTypeRecipeSelection_DB(MainActivity.Username,TypeToQuery);
+		try {				
+			Thread.sleep(1000);
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}	
 		
 		// Populate the list with the appropriate type from the database
 		populateRecipeNameList();
@@ -62,22 +75,30 @@ public class MyTypeRecipeSelection extends MainActivity {
         //*******  End List construction block *******
         
         
-        RecipeList.setOnItemClickListener(new OnItemClickListener(){
+        RecipeList.setOnItemClickListener(new OnItemClickListener(){        	
+        	
                  // argument position gives the index of item which is clicked
         		@Override
                 public void onItemClick(AdapterView<?> arg0, View v,int position, long arg3)
                 {
-        			       			
+        			     
+        				
+        				//Toast.makeText(getApplicationContext(), MyTypeRecipeSelection_DB.testString,   Toast.LENGTH_LONG).show();
+        				//Log.i("my message", MyTypeRecipeSelection_DB.testString);
+        				
+        				
+        		           
+        				
         				//We need to know which item was selected
-                        String selectedRecipe=recipeNameList.get(position);
+                        //String selectedRecipe=recipeNameList.get(position);
 
                         
                         //Get the corresponding ID and set it in the static for use in DisplayRecipeActivity
-                        SelectedRecipeIDNumber = recipeIDList.get(position);
+                        //SelectedRecipeIDNumber = recipeIDList.get(position);
   
                         
     					//This is test code we can get rid of later
-                       Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe  + " / " + SelectedRecipeIDNumber,   Toast.LENGTH_LONG).show();
+                       //Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe  + " / " + SelectedRecipeIDNumber,   Toast.LENGTH_LONG).show();
                       //  Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe ,   Toast.LENGTH_LONG).show();
                         
                         //Launch DisplayRecipeActivity
@@ -94,6 +115,11 @@ public class MyTypeRecipeSelection extends MainActivity {
 	}//End onCreate
 	
 
+	public void MyTypeRecipeSelection_DB(String user, String type)
+	{
+		
+		new MyTypeRecipeSelection_DB(this).execute(user,type);
+	}
 	
 	
 	
@@ -101,6 +127,32 @@ public class MyTypeRecipeSelection extends MainActivity {
 	//Travis will hook in the backend here
 	private void populateRecipeNameList() {
 	
+		
+		JSONArray jsonarray;
+		try {
+			jsonarray = new JSONArray(MyTypeRecipeSelection_DB.jsonResponse);
+			for (int i = 0; i < jsonarray.length(); i++) {
+        	    JSONObject jsonobject = jsonarray.getJSONObject(i);
+        	    Integer ID = Integer.parseInt(jsonobject.getString("RecipeID"));
+        	    String RecipeName = jsonobject.getString("RecipeName");
+        	    //String CookTime = jsonobject.getString("CookTime");
+        	    //String MealType = jsonobject.getString("MealType");
+        		recipeNameList.add(RecipeName);
+        		recipeIDList.add(ID);
+        	    //Log.i("my message", ID);
+        	    Log.i("my message", RecipeName);
+        	    //Log.i("my message", CookTime);
+        	    //Log.i("my message", MealType);
+        	}
+			
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+           
+		
+		/*
 		//Test recipes, remove after SQL logic is in place.
 		recipeNameList.add("Cheezy Bacon Curls");
 		recipeIDList.add(101);
@@ -135,6 +187,8 @@ public class MyTypeRecipeSelection extends MainActivity {
 		
 		recipeNameList.add("Something Something Bacon Darkside");
 		recipeIDList.add(111);
+		
+		*/
 		
 	}
 
