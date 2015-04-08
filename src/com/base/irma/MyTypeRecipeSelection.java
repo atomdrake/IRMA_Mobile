@@ -81,25 +81,18 @@ public class MyTypeRecipeSelection extends MainActivity {
         		@Override
                 public void onItemClick(AdapterView<?> arg0, View v,int position, long arg3)
                 {
-        			     
-        				
-        				//Toast.makeText(getApplicationContext(), MyTypeRecipeSelection_DB.testString,   Toast.LENGTH_LONG).show();
-        				//Log.i("my message", MyTypeRecipeSelection_DB.testString);
-        				
-        				
-        		           
-        				
+
         				//We need to know which item was selected
-                        //String selectedRecipe=recipeNameList.get(position);
+                        String selectedRecipe=recipeNameList.get(position);
 
                         
                         //Get the corresponding ID and set it in the static for use in DisplayRecipeActivity
-                        //SelectedRecipeIDNumber = recipeIDList.get(position);
+                        SelectedRecipeIDNumber = recipeIDList.get(position);
   
                         
     					//This is test code we can get rid of later
-                       //Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe  + " / " + SelectedRecipeIDNumber,   Toast.LENGTH_LONG).show();
-                      //  Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe ,   Toast.LENGTH_LONG).show();
+                      Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe  + " / " + SelectedRecipeIDNumber,   Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe ,   Toast.LENGTH_LONG).show();
                         
                         //Launch DisplayRecipeActivity
                         
