@@ -25,7 +25,7 @@ public class PantryAddMenu extends MainActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pantry_add_main);
 		
-		ScanButton = (Button) findViewById(R.id.AddButton);
+		ScanButton = (Button) findViewById(R.id.Make_Button);
 		ManualEntryButton = (Button) findViewById(R.id.CancelButton);
 		
 		

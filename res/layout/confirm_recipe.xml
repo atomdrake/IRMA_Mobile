@@ -1,0 +1,80 @@
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:fillViewport="true">
+
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:focusable="true"
+	    android:focusableInTouchMode="true"
+	    android:paddingBottom="@dimen/activity_vertical_margin"
+	    android:paddingLeft="@dimen/activity_horizontal_margin"
+	    android:paddingRight="@dimen/activity_horizontal_margin"
+	    android:paddingTop="@dimen/activity_vertical_margin" >
+
+	    <EditText
+	        android:id="@+id/Recipe_Name_field"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="19dp"
+	        android:longClickable="false"
+			android:clickable="false"
+	        android:ems="10"
+	        android:hint="Recipe Name" >
+	    </EditText>
+
+	    <Button
+	        android:id="@+id/CancelButton"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginBottom="17dp"
+	        android:layout_marginRight="36dp"
+	        android:text="Cancel" />
+
+	    <Button
+	        android:id="@+id/Make_Button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginBottom="17dp"
+	        android:layout_marginLeft="36dp"
+	        android:text="Make It" />
+
+
+	    <EditText
+	        android:id="@+id/Steps_Field"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/Ingredients_Field"
+	        android:layout_below="@+id/Ingredients_Field"
+	        android:layout_marginTop="24dp"
+	        android:ems="10"
+	        android:hint="Directions"
+     	   	android:longClickable="false"
+			android:clickable="false"
+	        android:inputType="textMultiLine" />
+
+	    <EditText
+	        android:id="@+id/Ingredients_Field"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/Make_Button"
+	        android:layout_below="@+id/Recipe_Name_field"
+	        android:layout_marginTop="27dp"
+	        android:clickable="false"
+	        android:ems="10"
+	        android:hint="Ingredients"
+	        android:inputType="textMultiLine"
+	        android:longClickable="false" />
+
+
+	</RelativeLayout>
+
+</ScrollView>

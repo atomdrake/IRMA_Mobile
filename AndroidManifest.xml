@@ -72,9 +72,13 @@
             android:name=".MyRecipeTypeMainMenu"
             android:label="My Recipes by Type" >            
         </activity>  
-          <activity
+        <activity
             android:name=".MyTypeRecipeSelection"
             android:label="Select a Recipe to Display" >            
+        </activity>  
+        <activity
+            android:name=".ConfirmRecipeSelection"
+            android:label="Recipe Details" >            
         </activity>  
         
         <activity android:name="com.dm.zbar.android.scanner.ZBarScannerActivity"

@@ -50,10 +50,10 @@ public class PantryAddScanner extends MainActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pantry_add_scanner);
 		
-		AddButton = (Button) findViewById(R.id.AddButton);
+		AddButton = (Button) findViewById(R.id.Make_Button);
 		CancelButton = (Button) findViewById(R.id.CancelButton);
 		ScanButton = (Button) findViewById(R.id.Breakfast_Button);	
-		item_Name_Field = (EditText) findViewById(R.id.Name_field);
+		item_Name_Field = (EditText) findViewById(R.id.Recipe_Name_field);
 		calorie_field = (EditText) findViewById(R.id.Calorie_field);
 		carb_field = (EditText) findViewById(R.id.Carb_field);
 		fat_field = (EditText) findViewById(R.id.Fat_field);

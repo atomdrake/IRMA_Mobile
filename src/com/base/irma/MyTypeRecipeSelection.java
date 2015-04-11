@@ -95,7 +95,8 @@ public class MyTypeRecipeSelection extends MainActivity {
                         Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe ,   Toast.LENGTH_LONG).show();
                         
                         //Launch DisplayRecipeActivity
-                        
+            			Intent i = new Intent(MyTypeRecipeSelection.this, ConfirmRecipeSelection.class);
+            			startActivity(i);
                         
                         
                      }

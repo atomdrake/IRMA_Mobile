@@ -15,7 +15,7 @@
   		android:focusableInTouchMode="true" >
 
 	    <EditText
-	        android:id="@+id/Name_field"
+	        android:id="@+id/Recipe_Name_field"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentTop="true"
@@ -37,7 +37,7 @@
 	        android:text="Cancel" />
 
 	    <Button
-	        android:id="@+id/AddButton"
+	        android:id="@+id/Make_Button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	       	android:layout_alignParentBottom="true"
@@ -51,7 +51,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_above="@+id/CancelButton"
-	        android:layout_alignLeft="@+id/AddButton"
+	        android:layout_alignLeft="@+id/Make_Button"
 	        android:layout_alignRight="@+id/Protein_field"
 	        android:layout_marginBottom="40dp"
 	        android:ems="10"
@@ -78,7 +78,7 @@
 	        android:layout_alignBaseline="@+id/Protein_field"
 	        android:layout_alignBottom="@+id/Protein_field"
 	        android:layout_alignLeft="@+id/Carb_field"
-	        android:layout_alignRight="@+id/AddButton"
+	        android:layout_alignRight="@+id/Make_Button"
 	        android:ems="10"
 	        android:hint="Fat" />
 
@@ -129,8 +129,8 @@
 	        android:id="@+id/Carb_field"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/Name_field"
-	        android:layout_below="@+id/Name_field"
+	        android:layout_alignLeft="@+id/Recipe_Name_field"
+	        android:layout_below="@+id/Recipe_Name_field"
 	        android:layout_marginTop="24dp"
 	        android:ems="10"
 	        android:hint="Carbohydrate" />
