@@ -80,6 +80,11 @@
             android:name=".ConfirmRecipeSelection"
             android:label="Recipe Details" >            
         </activity>  
+                <activity
+            android:name=".RecipeDisplay"
+            android:screenOrientation="landscape">            
+        </activity>  
+        
         
         <activity android:name="com.dm.zbar.android.scanner.ZBarScannerActivity"
         android:screenOrientation="landscape"

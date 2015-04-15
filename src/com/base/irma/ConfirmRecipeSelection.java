@@ -23,6 +23,10 @@ public class ConfirmRecipeSelection extends MainActivity {
 	EditText Ingredients_Field;
 	EditText Directions_Field;
 	
+	//Store the recipe we select so we can pull it for display on the next screen
+	static int SelectedRecipeIDNumber;	
+	static String selectedRecipe = "";
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.confirm_recipe);
@@ -51,7 +55,9 @@ public class ConfirmRecipeSelection extends MainActivity {
 			public void onClick(View v) {
 
 			Toast.makeText(ConfirmRecipeSelection.this, "Go to step by step directions", Toast.LENGTH_LONG).show();	
-				
+			
+			Intent i = new Intent(ConfirmRecipeSelection.this, RecipeDisplay.class);
+			startActivity(i);	
 
 
 			}
@@ -86,6 +92,9 @@ public class ConfirmRecipeSelection extends MainActivity {
 		JSONArray newArray;
 		String masterDirections = "";
 		String masterIngredients = "";
+		
+		//We'll need to generalize this line to allow us to pull the selectedRecipe ID from whatever activity sent us here
+		//For example if we got here from select recipe by time or by cuisine
 		String RecipeName = MyTypeRecipeSelection.selectedRecipe;
 		try {
 			newArray = new JSONArray(ConfirmRecipeSelection_DB.jsonResponse);
@@ -126,7 +135,9 @@ public class ConfirmRecipeSelection extends MainActivity {
 		//String Directions = "Heat oil to 375 degrees in a large skillet" + "\n" + "Coat the bacon with the flour" + "\n" + 
 		//					"Fry the bacon in the oil untill crispy" + "\n" + "Sprinkle on salt and peper to taste" + "\n" + 
 		//							"Enjoy";
-		//		
+				
+		
+		selectedRecipe = MyTypeRecipeSelection.selectedRecipe;
 		
 		
 		Recipe_Name_Field.setText(RecipeName);
