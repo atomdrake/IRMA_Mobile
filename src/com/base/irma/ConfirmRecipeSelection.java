@@ -133,6 +133,11 @@ public class ConfirmRecipeSelection extends MainActivity {
 		Ingredients_Field.setText(masterIngredients);
 		Directions_Field.setText(masterDirections);
 		
+		//Set the text fields to be uneditable by user.
+		Recipe_Name_Field.setKeyListener(null);
+		Ingredients_Field.setKeyListener(null);
+		Directions_Field.setKeyListener(null);
+		
 		
 	}
 	
