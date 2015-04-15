@@ -1,5 +1,9 @@
 package com.base.irma;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,17 +22,25 @@ public class ConfirmRecipeSelection extends MainActivity {
 	EditText Recipe_Name_Field;
 	EditText Ingredients_Field;
 	EditText Directions_Field;
-
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.confirm_recipe);
+
 		
 		MakeButton = (Button) findViewById(R.id.Make_Button);
 		CancelButton = (Button) findViewById(R.id.CancelButton);
 		Recipe_Name_Field = (EditText) findViewById(R.id.Recipe_Name_field);
 		Ingredients_Field = (EditText) findViewById(R.id.Ingredients_Field);
 		Directions_Field = (EditText) findViewById(R.id.Steps_Field);
+		
+		
+		ConfirmRecipeSelection_DB(MainActivity.Username);
+		try {				
+			Thread.sleep(1000);
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}	
 
 		//Fill the text fields with the information.
 		populate_text_fields();
@@ -59,26 +71,67 @@ public class ConfirmRecipeSelection extends MainActivity {
 		});// End CancelButton Button
 		
 	}//End onCreate
+	
+	public void ConfirmRecipeSelection_DB(String user)
+	{
+		
+		new ConfirmRecipeSelection_DB(this).execute(user);
+	}
 
 	//Travis this method will populate the text fields as necessary.
 	//Remember the recipe ID is being stored in SelectedRecipeIDNumber
 	private void populate_text_fields() {
 		// TODO Auto-generated method stub
-		
+	    Log.i("my main message", "WTF?");
+		JSONArray newArray;
+		String masterDirections = "";
+		String masterIngredients = "";
+		String RecipeName = MyTypeRecipeSelection.selectedRecipe;
+		try {
+			newArray = new JSONArray(ConfirmRecipeSelection_DB.jsonResponse);
+			for (int i = 0; i < newArray.length(); i++) {
+        	    JSONObject jsonobject = newArray.getJSONObject(i);        	    
+        	    try
+        	    {
+	        	    String Quantity = jsonobject.getString("Quantity");	        	
+	        	    String UOM = jsonobject.getString("UOM");
+	        	    String Ingredient = jsonobject.getString("Item");
+	        	    //Log.i("my RecipeName", RecipeName);
+	        	    masterIngredients = masterIngredients + Quantity + " " + UOM + " " + Ingredient + "\n";
+        	    }
+        	    catch (JSONException e){}
+        	    
+        	    try{
+        	    	String directions = jsonobject.getString("Contents");
+            	    masterDirections = masterDirections + directions + "\n"; 	
+        	    }
+        	    catch (JSONException e){}
+        	   
+        	    Log.i("my message", masterIngredients);
+
+        	}
+			
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+           
 		
 		//Something like if(recipe ID exsists in My TypeRecipeSelection then use it, else check the other places it could be
 		
 		//Example test data
-		String RecipeName = "Chicken Fried Bacon";
-		String Ingredients = "Bacon 1 Lb" + "\n" + "All purpose flour 3 cups" + "\n" + "Vegetable oil 4 cups" + "\n" + "Salt and Pepper";
-		String Directions = "Heat oil to 375 degrees in a large skillet" + "\n" + "Coat the bacon with the flour" + "\n" + 
-								"Fry the bacon in the oil untill crispy" + "\n" + "Sprinkle on salt and peper to taste" + "\n" + 
-									"Enjoy";
-				
+		//String RecipeName = "Chicken Fried Bacon";
+		//String Ingredients = "Bacon 1 Lb" + "\n" + "All purpose flour 3 cups" + "\n" + "Vegetable oil 4 cups" + "\n" + "Salt and Pepper";
+		//String Directions = "Heat oil to 375 degrees in a large skillet" + "\n" + "Coat the bacon with the flour" + "\n" + 
+		//					"Fry the bacon in the oil untill crispy" + "\n" + "Sprinkle on salt and peper to taste" + "\n" + 
+		//							"Enjoy";
+		//		
+		
 		
 		Recipe_Name_Field.setText(RecipeName);
-		Ingredients_Field.setText(Ingredients);
-		Directions_Field.setText(Directions);
+		Ingredients_Field.setText(masterIngredients);
+		Directions_Field.setText(masterDirections);
 		
 		
 	}

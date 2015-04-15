@@ -31,7 +31,7 @@ public class MyTypeRecipeSelection extends MainActivity {
 	
 	//Store the recipe we select so we can pull it for display on the next screen
 	static int SelectedRecipeIDNumber;	
-	
+	static String selectedRecipe = "";
 	//The listView we'll associate with the recipe ListView on the page
 	ListView RecipeList;
 	
@@ -83,7 +83,7 @@ public class MyTypeRecipeSelection extends MainActivity {
                 {
 
         				//We need to know which item was selected
-                        String selectedRecipe=recipeNameList.get(position);
+                        selectedRecipe=recipeNameList.get(position);
 
                         
                         //Get the corresponding ID and set it in the static for use in DisplayRecipeActivity
@@ -92,7 +92,7 @@ public class MyTypeRecipeSelection extends MainActivity {
                         
     					//This is test code we can get rid of later
                       Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe  + " / " + SelectedRecipeIDNumber,   Toast.LENGTH_LONG).show();
-                        Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe ,   Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe ,   Toast.LENGTH_LONG).show();
                         
                         //Launch DisplayRecipeActivity
             			Intent i = new Intent(MyTypeRecipeSelection.this, ConfirmRecipeSelection.class);
@@ -118,10 +118,8 @@ public class MyTypeRecipeSelection extends MainActivity {
 	
 	
 	//populate the list with some recipes, this will probably use TypeToQuery
-	//Travis will hook in the backend here
 	private void populateRecipeNameList() {
 	
-		
 		JSONArray jsonarray;
 		try {
 			jsonarray = new JSONArray(MyTypeRecipeSelection_DB.jsonResponse);
@@ -129,14 +127,11 @@ public class MyTypeRecipeSelection extends MainActivity {
         	    JSONObject jsonobject = jsonarray.getJSONObject(i);
         	    Integer ID = Integer.parseInt(jsonobject.getString("RecipeID"));
         	    String RecipeName = jsonobject.getString("RecipeName");
-        	    //String CookTime = jsonobject.getString("CookTime");
-        	    //String MealType = jsonobject.getString("MealType");
         		recipeNameList.add(RecipeName);
         		recipeIDList.add(ID);
-        	    //Log.i("my message", ID);
+
         	    Log.i("my message", RecipeName);
-        	    //Log.i("my message", CookTime);
-        	    //Log.i("my message", MealType);
+
         	}
 			
 			
@@ -146,43 +141,7 @@ public class MyTypeRecipeSelection extends MainActivity {
 		}
            
 		
-		/*
-		//Test recipes, remove after SQL logic is in place.
-		recipeNameList.add("Cheezy Bacon Curls");
-		recipeIDList.add(101);
-
 		
-		recipeNameList.add("Chicken fried Bacon");
-		recipeIDList.add(102);
-		
-		recipeNameList.add("Deepfried Bacon");
-		recipeIDList.add(103);
-		
-		recipeNameList.add("Bacon Moose");
-		recipeIDList.add(104);
-		
-		recipeNameList.add("Bacon tartar");
-		recipeIDList.add(105);
-		
-		recipeNameList.add("Bacon on Bacon Sandwich");
-		recipeIDList.add(106);
-		
-		recipeNameList.add("Bacon Weave");
-		recipeIDList.add(107);
-		
-		recipeNameList.add("Chunks Of Bacon");
-		recipeIDList.add(108);
-		
-		recipeNameList.add("Some other Bacon Recipe");
-		recipeIDList.add(109);
-		
-		recipeNameList.add("Something Something Bacon");
-		recipeIDList.add(110);
-		
-		recipeNameList.add("Something Something Bacon Darkside");
-		recipeIDList.add(111);
-		
-		*/
 		
 	}
 
