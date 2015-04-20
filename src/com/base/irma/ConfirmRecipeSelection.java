@@ -95,7 +95,12 @@ public class ConfirmRecipeSelection extends MainActivity {
 		
 		//We'll need to generalize this line to allow us to pull the selectedRecipe ID from whatever activity sent us here
 		//For example if we got here from select recipe by time or by cuisine
+		
+		
 		String RecipeName = MyTypeRecipeSelection.selectedRecipe;
+		
+		
+		
 		try {
 			newArray = new JSONArray(ConfirmRecipeSelection_DB.jsonResponse);
 			for (int i = 0; i < newArray.length(); i++) {
