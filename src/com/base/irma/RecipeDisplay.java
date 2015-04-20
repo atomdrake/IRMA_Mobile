@@ -43,7 +43,10 @@ public class RecipeDisplay extends MainActivity {
 		Recipe_Name_Field = (EditText) findViewById(R.id.Recipe_Name_field);
 		Ingredients_Field = (EditText) findViewById(R.id.Ingredients_Field);
 		Directions_Field = (EditText) findViewById(R.id.Steps_Field);
+		StepNumber_Field = (EditText) findViewById(R.id.StepNumber);
 		
+		
+	
 		//If there is a next step go to it
 		NextButton.setOnClickListener(new View.OnClickListener() {
 			
@@ -66,6 +69,8 @@ public class RecipeDisplay extends MainActivity {
 			
 			}
 		});// End NextButton Button
+		
+		
 		
 		
 		//If there is a previous step go to it
@@ -109,8 +114,12 @@ public class RecipeDisplay extends MainActivity {
 		});// End CancelButton Button
 		
 		
+		
+		
 		//Fill the text fields with the information.
 		populate_text_fields();
+		
+		
 		
 	}//End onCreate
 	
@@ -152,15 +161,25 @@ public class RecipeDisplay extends MainActivity {
 		
 		//Example test data
 		String RecipeName = "Chicken Fried Bacon";
+		
 		String Ingredients = "Bacon 1 Lb" + "\n" + "All purpose flour 3 cups" + "\n" + "Vegetable oil 4 cups" + "\n" + "Salt and Pepper";
-		String Directions = "Heat oil to 375 degrees in a large skillet" ;//+ "\n" + "Coat the bacon with the flour" + "\n" + 
+		
+		
+		String Directions = "Heat oil to 375 degrees in a large skillet" ;
+		
+			//+ "\n" + "Coat the bacon with the flour" + "\n" + 
 			//				"Fry the bacon in the oil untill crispy" + "\n" + "Sprinkle on salt and peper to taste" + "\n" + 
 			//						"Enjoy";
 		
+		
+		String Steps = "Step: " + CurrentStepNumber;
+		
+		
+		//Set the text in the fields
 		Recipe_Name_Field.setText(RecipeName);
 		Ingredients_Field.setText(Ingredients);
 		Directions_Field.setText(Directions);
-		StepNumber_Field.setText("Step " + CurrentStepNumber);
+		StepNumber_Field.setText(Steps);
 		
 		//Set the text fields to be uneditable by user.
 		Recipe_Name_Field.setKeyListener(null);

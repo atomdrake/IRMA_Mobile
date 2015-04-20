@@ -62,8 +62,10 @@
 	        android:layout_alignLeft="@+id/Steps_Field"
 	        android:layout_alignParentBottom="true"
 	        android:layout_marginLeft="23dp"
-	        android:ems="6"
+	        android:ems="7"
 	        android:gravity="center"
+	        android:clickable="false"
+	        android:longClickable="false"
 	        android:hint="Step n" />
 
 	    <Button
