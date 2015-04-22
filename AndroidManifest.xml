@@ -92,7 +92,10 @@
             android:name=".AllTypeRecipeSelection"
             android:label="Select a Recipe to Display" >              
         </activity>
-          
+        <activity
+            android:name=".MyRecipeCuisineMainMenu"
+            android:label="My Recipes by Cuisine" >              
+        </activity>
         
         
         <activity android:name="com.dm.zbar.android.scanner.ZBarScannerActivity"
