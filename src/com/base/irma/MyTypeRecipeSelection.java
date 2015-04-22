@@ -49,7 +49,7 @@ public class MyTypeRecipeSelection extends MainActivity {
 
 		RecipeList = (ListView) findViewById(R.id.MyTypeListView);
 		
-		Toast.makeText(getApplicationContext(), "Type Selected to display here : "+TypeToQuery,   Toast.LENGTH_LONG).show();
+		//Toast.makeText(getApplicationContext(), "Type Selected to display here : "+TypeToQuery,   Toast.LENGTH_LONG).show();
 		
 		//******* Create an arrayList of recipes and then adapt it for use for, and set it in the RecipeList ListView ********
 		recipeNameList = new ArrayList<String>();
@@ -91,7 +91,7 @@ public class MyTypeRecipeSelection extends MainActivity {
   
                         
     					//This is test code we can get rid of later
-                      Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe  + " / " + SelectedRecipeIDNumber,   Toast.LENGTH_LONG).show();
+                      //Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe  + " / " + SelectedRecipeIDNumber,   Toast.LENGTH_LONG).show();
                         //Toast.makeText(getApplicationContext(), "Recipe Name/ID Selected : "+selectedRecipe ,   Toast.LENGTH_LONG).show();
                         
                         //Launch DisplayRecipeActivity

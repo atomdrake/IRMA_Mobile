@@ -33,21 +33,14 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 		DinnerButton = (Button) findViewById(R.id.Dinner_Button);
 		DessertButton = (Button) findViewById(R.id.Dessert_Button);
 		SnackButton = (Button) findViewById(R.id.Snack_Button);
-		OtherButton = (Button) findViewById(R.id.Other_Button);
-		
-		
-		//Not implemented, will probably end up using some kind of on focus listener and 
-		//running a sql query on things as they are entering unless we
-		//want to just add in a search button
-	
-		
+		OtherButton = (Button) findViewById(R.id.Other_Button);		
 		
 		BreakfastButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Breakfast Recipes...", Toast.LENGTH_LONG).show();	
+			//Toast.makeText(MyRecipeTypeMainMenu.this, "Display Breakfast Recipes...", Toast.LENGTH_LONG).show();	
 			
 			TypeSelected = "Breakfast";
 			
@@ -65,7 +58,7 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Lunch Recipes...", Toast.LENGTH_LONG).show();	
+			//Toast.makeText(MyRecipeTypeMainMenu.this, "Display Lunch Recipes...", Toast.LENGTH_LONG).show();	
 			
 			TypeSelected = "Lunch";
 			
@@ -81,7 +74,7 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Dinner Recipes...", Toast.LENGTH_LONG).show();		
+			//Toast.makeText(MyRecipeTypeMainMenu.this, "Display Dinner Recipes...", Toast.LENGTH_LONG).show();		
 			
 			TypeSelected = "Dinner";
 			
@@ -97,7 +90,7 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Dessert Recipes...", Toast.LENGTH_LONG).show();	
+			//Toast.makeText(MyRecipeTypeMainMenu.this, "Display Dessert Recipes...", Toast.LENGTH_LONG).show();	
 			
 			TypeSelected = "Dessert";
 			
@@ -113,7 +106,7 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Snack Recipes...", Toast.LENGTH_LONG).show();	
+			//Toast.makeText(MyRecipeTypeMainMenu.this, "Display Snack Recipes...", Toast.LENGTH_LONG).show();	
 			
 			TypeSelected = "Snack";
 			
@@ -129,7 +122,7 @@ public class MyRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MyRecipeTypeMainMenu.this, "Display Other Recipes...", Toast.LENGTH_LONG).show();		
+			//Toast.makeText(MyRecipeTypeMainMenu.this, "Display Other Recipes...", Toast.LENGTH_LONG).show();		
 			
 			TypeSelected = "Other";
 			

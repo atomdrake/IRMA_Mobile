@@ -118,6 +118,7 @@ public class AllTypeRecipeSelection extends MainActivity {
 	
 	
 	//populate the list with some recipes, this will probably use TypeToQuery
+	//Travis this will need to be adjusted to query public recipes by type as you see fit 
 	private void populateRecipeNameList() {
 	
 		JSONArray jsonarray;

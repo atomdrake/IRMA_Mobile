@@ -30,8 +30,7 @@
 	        android:id="@+id/Time_Button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/Region_Button"
-	        android:layout_alignRight="@+id/Region_Button"
+	        android:layout_centerHorizontal="true"
 	        android:layout_below="@+id/SearchTextField"
 	        android:layout_marginTop="170dp"
 	        android:text="Time" />
@@ -40,8 +39,7 @@
 	        android:id="@+id/Type_Button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/Time_Button"
-	        android:layout_alignRight="@+id/Region_Button"
+	        android:layout_centerHorizontal="true"
 	        android:layout_below="@+id/SearchTextField"
 	        android:layout_marginTop="80dp"
 	        android:text="Type" />

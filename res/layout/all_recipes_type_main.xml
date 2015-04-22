@@ -38,8 +38,8 @@
 	        android:id="@+id/Dinner_Button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/Lunch_Button"
 	        android:layout_below="@+id/Lunch_Button"
+	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="20dp"
 	        android:text="Dinner" />
 	
@@ -47,8 +47,8 @@
 	        android:id="@+id/Dessert_Button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/Dinner_Button"
 	        android:layout_below="@+id/Dinner_Button"
+	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="20dp"
 	        android:text="Dessert" />
 	
@@ -56,8 +56,8 @@
 	        android:id="@+id/Snack_Button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/Dessert_Button"
 	        android:layout_below="@+id/Dessert_Button"
+	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="17dp"
 	        android:text="Snack" />
 	
@@ -65,8 +65,8 @@
 	        android:id="@+id/Other_Button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/Snack_Button"
 	        android:layout_below="@+id/Snack_Button"
+	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="20dp"
 	        android:text="Other" />
 

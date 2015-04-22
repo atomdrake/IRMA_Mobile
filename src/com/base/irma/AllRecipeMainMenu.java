@@ -39,6 +39,8 @@ public class AllRecipeMainMenu extends MainActivity {
 			public void onClick(View v) {
 
 			Toast.makeText(AllRecipeMainMenu.this, "Display all recipes by type...", Toast.LENGTH_LONG).show();	
+			Intent i = new Intent(AllRecipeMainMenu.this, AllRecipeTypeMainMenu.class);
+			startActivity(i);
 		
 			
 			}

@@ -25,7 +25,7 @@
          android:id="@+id/MyRecipes"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/MyPantry"
+	     android:layout_centerHorizontal="true"
          android:layout_below="@+id/AllRecipes"
          android:layout_marginTop="28dp"
          android:text="My Recipes" />
@@ -34,7 +34,7 @@
          android:id="@+id/MyPantry"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/AllRecipes"
+	     android:layout_centerHorizontal="true"
          android:layout_below="@+id/MyRecipes"
          android:layout_marginTop="32dp"
          android:text="My Pantry" />

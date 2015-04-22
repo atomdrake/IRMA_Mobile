@@ -36,12 +36,6 @@ public class AllRecipeTypeMainMenu extends MainActivity {
 		OtherButton = (Button) findViewById(R.id.Other_Button);
 		
 		
-		//Not implemented, will probably end up using some kind of on focus listener and 
-		//running a sql query on things as they are entering unless we
-		//want to just add in a search button
-	
-		
-		
 		BreakfastButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override

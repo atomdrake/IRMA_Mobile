@@ -80,10 +80,19 @@
             android:name=".ConfirmRecipeSelection"
             android:label="Recipe Details" >            
         </activity>  
-                <activity
+        <activity
             android:name=".RecipeDisplay"
             android:screenOrientation="landscape">            
-        </activity>  
+        </activity>
+        <activity
+            android:name=".AllRecipeTypeMainMenu"
+            android:label="All Recipes by Type" >              
+        </activity>
+        <activity
+            android:name=".AllTypeRecipeSelection"
+            android:label="Select a Recipe to Display" >              
+        </activity>
+          
         
         
         <activity android:name="com.dm.zbar.android.scanner.ZBarScannerActivity"
