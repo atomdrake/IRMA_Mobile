@@ -45,7 +45,7 @@ public class AllTypeRecipeSelection extends MainActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.all_type_recipe_selection);
-		
+		Toast.makeText(getApplicationContext(), "TEEEEEEEEEEST",   Toast.LENGTH_LONG).show();
 
 		RecipeList = (ListView) findViewById(R.id.MyTypeListView);
 		
@@ -56,7 +56,7 @@ public class AllTypeRecipeSelection extends MainActivity {
 		recipeIDList = new ArrayList<Integer>();		
 	
 		
-		MyTypeRecipeSelection_DB(MainActivity.Username,TypeToQuery);
+		AllTypeRecipeSelection_DB(TypeToQuery);
 		try {				
 			Thread.sleep(1000);
 		} catch(InterruptedException ex) {
@@ -109,10 +109,10 @@ public class AllTypeRecipeSelection extends MainActivity {
 	}//End onCreate
 	
 
-	public void MyTypeRecipeSelection_DB(String user, String type)
+	public void AllTypeRecipeSelection_DB(String type)
 	{
 		
-		new MyTypeRecipeSelection_DB(this).execute(user,type);
+		new AllTypeRecipeSelection_DB(this).execute(type);
 	}
 	
 	
@@ -123,7 +123,7 @@ public class AllTypeRecipeSelection extends MainActivity {
 	
 		JSONArray jsonarray;
 		try {
-			jsonarray = new JSONArray(MyTypeRecipeSelection_DB.jsonResponse);
+			jsonarray = new JSONArray(AllTypeRecipeSelection_DB.jsonResponse);
 			for (int i = 0; i < jsonarray.length(); i++) {
         	    JSONObject jsonobject = jsonarray.getJSONObject(i);
         	    Integer ID = Integer.parseInt(jsonobject.getString("RecipeID"));

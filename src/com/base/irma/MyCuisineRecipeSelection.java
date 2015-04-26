@@ -58,7 +58,7 @@ public class MyCuisineRecipeSelection extends MainActivity {
 		
 		
 		//Travis this call will likely need to be changed to look for cuisine as opposed to type.
-		MyTypeRecipeSelection_DB(MainActivity.Username,TypeToQuery);
+		MyCuisineRecipeSelection_DB(MainActivity.Username,TypeToQuery);
 		try {				
 			Thread.sleep(1000);
 		} catch(InterruptedException ex) {
@@ -111,10 +111,10 @@ public class MyCuisineRecipeSelection extends MainActivity {
 	}//End onCreate
 	
 
-	public void MyTypeRecipeSelection_DB(String user, String type)
+	public void MyCuisineRecipeSelection_DB(String user, String type)
 	{
 		
-		new MyTypeRecipeSelection_DB(this).execute(user,type);
+		new MyCuisineRecipeSelection_DB(this).execute(user,type);
 	}
 	
 	
@@ -124,7 +124,7 @@ public class MyCuisineRecipeSelection extends MainActivity {
 	
 		JSONArray jsonarray;
 		try {
-			jsonarray = new JSONArray(MyTypeRecipeSelection_DB.jsonResponse);
+			jsonarray = new JSONArray(MyCuisineRecipeSelection_DB.jsonResponse);
 			for (int i = 0; i < jsonarray.length(); i++) {
         	    JSONObject jsonobject = jsonarray.getJSONObject(i);
         	    Integer ID = Integer.parseInt(jsonobject.getString("RecipeID"));
