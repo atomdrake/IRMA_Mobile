@@ -96,7 +96,10 @@
             android:name=".MyRecipeCuisineMainMenu"
             android:label="My Recipes by Cuisine" >              
         </activity>
-        
+        <activity
+            android:name=".MyCuisineRecipeSelection"
+            android:label="My Recipes by Cuisine" >              
+        </activity>
         
         <activity android:name="com.dm.zbar.android.scanner.ZBarScannerActivity"
         android:screenOrientation="landscape"

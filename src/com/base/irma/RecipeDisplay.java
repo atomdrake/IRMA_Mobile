@@ -24,6 +24,8 @@ public class RecipeDisplay extends MainActivity {
 	EditText Ingredients_Field;
 	EditText Directions_Field;
 	EditText StepNumber_Field;
+	String[] DirectionsForStep;
+	String[] IngredientsInStep;
 	
 	//We need a variable to tack what step number we're at.
 	int CurrentStepNumber = 1;
@@ -167,19 +169,40 @@ public class RecipeDisplay extends MainActivity {
 		
 		String Directions = "Heat oil to 375 degrees in a large skillet" ;
 		
+		
+		
 			//+ "\n" + "Coat the bacon with the flour" + "\n" + 
 			//				"Fry the bacon in the oil untill crispy" + "\n" + "Sprinkle on salt and peper to taste" + "\n" + 
 			//						"Enjoy";
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		//Set the step string up
 		String Steps = "Step: " + CurrentStepNumber;
+		
+		//Make sure to update MaxStepsInRecipe!
+		MaxStepsInRecipe = 1;
+		
+		//Declare the size of our string arrays
+		DirectionsForStep = new String[MaxStepsInRecipe];  
+		IngredientsInStep = new String[MaxStepsInRecipe];		
+		
+		//Populate with example test data
+		DirectionsForStep[0] = Directions;
+		IngredientsInStep[0] = Ingredients;
 		
 		
 		//Set the text in the fields
-		Recipe_Name_Field.setText(RecipeName);
-		Ingredients_Field.setText(Ingredients);
-		Directions_Field.setText(Directions);
-		StepNumber_Field.setText(Steps);
+		Recipe_Name_Field.setText(RecipeName);				//Won't Change
+		Ingredients_Field.setText(IngredientsInStep[0]);  	//Will be IngredientsInStep[CurrentStepNumber-1]
+		Directions_Field.setText(DirectionsForStep[0]);   	//Will be DirectionsForStep[CurrentStepNumber-1]
+		StepNumber_Field.setText(Steps);					//Populated above
 		
 		//Set the text fields to be uneditable by user.
 		Recipe_Name_Field.setKeyListener(null);
@@ -187,8 +210,7 @@ public class RecipeDisplay extends MainActivity {
 		Directions_Field.setKeyListener(null);
 		StepNumber_Field.setKeyListener(null);
 		
-		//Make sure to update MaxStepsInRecipe!
-		MaxStepsInRecipe = 1;
+
 		
 		
 	}
