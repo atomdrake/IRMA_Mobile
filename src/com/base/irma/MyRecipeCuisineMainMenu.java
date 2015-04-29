@@ -45,7 +45,7 @@ public class MyRecipeCuisineMainMenu extends MainActivity {
 			TypeSelected = "American";
 			
 			//Launch the MyTypeRecipeSelection activity
-			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyTypeRecipeSelection.class);
+			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyCuisineRecipeSelection.class);
 			startActivity(i);
 		
 			
@@ -63,7 +63,7 @@ public class MyRecipeCuisineMainMenu extends MainActivity {
 			TypeSelected = "Mexican";
 			
 			//Launch the MyTypeRecipeSelection activity
-			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyTypeRecipeSelection.class);
+			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyCuisineRecipeSelection.class);
 			startActivity(i);
 			
 			}
@@ -79,7 +79,7 @@ public class MyRecipeCuisineMainMenu extends MainActivity {
 			TypeSelected = "Italian";
 			
 			//Launch the MyTypeRecipeSelection activity
-			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyTypeRecipeSelection.class);
+			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyCuisineRecipeSelection.class);
 			startActivity(i);
 			
 			}
@@ -95,7 +95,7 @@ public class MyRecipeCuisineMainMenu extends MainActivity {
 			TypeSelected = "French";
 			
 			//Launch the MyTypeRecipeSelection activity
-			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyTypeRecipeSelection.class);
+			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyCuisineRecipeSelection.class);
 			startActivity(i);
 			
 			}
@@ -111,7 +111,7 @@ public class MyRecipeCuisineMainMenu extends MainActivity {
 			TypeSelected = "Indian";
 			
 			//Launch the MyTypeRecipeSelection activity
-			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyTypeRecipeSelection.class);
+			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyCuisineRecipeSelection.class);
 			startActivity(i);
 			
 			}
@@ -127,7 +127,7 @@ public class MyRecipeCuisineMainMenu extends MainActivity {
 			TypeSelected = "Other";
 			
 			//Launch the MyTypeRecipeSelection activity
-			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyTypeRecipeSelection.class);
+			Intent i = new Intent(MyRecipeCuisineMainMenu.this, MyCuisineRecipeSelection.class);
 			startActivity(i);
 			
 			}

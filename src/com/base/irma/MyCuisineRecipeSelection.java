@@ -27,7 +27,7 @@ public class MyCuisineRecipeSelection extends MainActivity {
 	
 
 	//What type of recipes should be pulled from the database.
-	String TypeToQuery = MyRecipeTypeMainMenu.TypeSelected;   //TypeSelected in the previous menu
+	String TypeToQuery = MyRecipeCuisineMainMenu.TypeSelected;   //TypeSelected in the previous menu
 	
 	//Store the recipe we select so we can pull it for display on the next screen
 	static int SelectedRecipeIDNumber;	
