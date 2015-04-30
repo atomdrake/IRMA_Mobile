@@ -25,7 +25,7 @@ public class ConfirmRecipeSelection extends MainActivity {
 	
 	//Store the recipe we select so we can pull it for display on the next screen
 	static int SelectedRecipeIDNumber;	
-	static String selectedRecipe = "";   //This is the string to pass to the RecipeDisplay activity
+	static String selectedRecipe = " ";   //This is the string to pass to the RecipeDisplay activity
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -93,19 +93,21 @@ public class ConfirmRecipeSelection extends MainActivity {
 		String masterDirections = "";
 		String masterIngredients = "";
 		
-		//We'll need to generalize this line to allow us to pull the selectedRecipe ID from whatever activity sent us here
-		//For example if we got here from select recipe by time or by cuisine from either the my or all recipes chains
+		//Search through the modules and see which one has a selectedRecipe for us.
 		String RecipeName = " ";
 		
 		if(!MyTypeRecipeSelection.selectedRecipe.equals(" ")){
 			 RecipeName = MyTypeRecipeSelection.selectedRecipe;
 		}
 		else if( !AllTypeRecipeSelection.selectedRecipe.equals(" ")){
-			 RecipeName = AllTypeRecipeSelection.selectedRecipe;
-			
+			 RecipeName = AllTypeRecipeSelection.selectedRecipe;			
 		}
-
-		
+		else if( !MyCuisineRecipeSelection.selectedRecipe.equals(" ")){
+			 RecipeName = MyCuisineRecipeSelection.selectedRecipe;			
+		}
+		else if( !AllCuisineRecipeSelection.selectedRecipe.equals(" ")){
+			 RecipeName = AllCuisineRecipeSelection.selectedRecipe;			
+		}		
 		
 		
 		try {

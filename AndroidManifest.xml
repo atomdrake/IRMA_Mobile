@@ -98,7 +98,15 @@
         </activity>
         <activity
             android:name=".MyCuisineRecipeSelection"
-            android:label="My Recipes by Cuisine" >              
+            android:label="Select a Recipe to Display" >              
+        </activity>
+        <activity
+            android:name=".AllRecipeCuisineMainMenu"
+            android:label="All Recipes by Cuisine" >              
+        </activity>
+        <activity
+            android:name=".AllCuisineRecipeSelection"
+            android:label="Select a Recipe to Displaye" >              
         </activity>
         
         <activity android:name="com.dm.zbar.android.scanner.ZBarScannerActivity"

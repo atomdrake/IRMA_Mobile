@@ -62,7 +62,9 @@ public class AllRecipeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(AllRecipeMainMenu.this, "Display all recipes by region...", Toast.LENGTH_LONG).show();		
+			Toast.makeText(AllRecipeMainMenu.this, "Display all recipes by region...", Toast.LENGTH_LONG).show();	
+			Intent i = new Intent(AllRecipeMainMenu.this, AllRecipeCuisineMainMenu.class);
+			startActivity(i);
 			
 			}
 		});// End RegionButton Button
