@@ -31,9 +31,9 @@
 	        android:id="@+id/CancelButton"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignParentBottom="true"
+	        android:layout_alignBottom="@+id/Make_Button"
 	        android:layout_alignParentRight="true"
-	        android:layout_marginBottom="17dp"
+	        android:layout_below="@+id/Steps_Field"
 	        android:layout_marginRight="36dp"
 	        android:text="Cancel" />
 
@@ -41,12 +41,10 @@
 	        android:id="@+id/Make_Button"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignParentBottom="true"
+	        android:layout_below="@+id/Steps_Field"
 	        android:layout_alignParentLeft="true"
-	        android:layout_marginBottom="17dp"
 	        android:layout_marginLeft="36dp"
 	        android:text="Make It" />
-
 
 	    <EditText
 	        android:id="@+id/Steps_Field"
