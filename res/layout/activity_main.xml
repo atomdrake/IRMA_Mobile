@@ -2,6 +2,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
+  android:background="@drawable/light_brown_wood_texture"
   android:fillViewport="true">
 
 	<RelativeLayout 
@@ -42,13 +43,13 @@
 	
 	    <ImageView
 	        android:id="@+id/imageView1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
 	        android:layout_alignParentTop="true"
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="24dp"
+	        android:layout_width="150dp"
+	        android:layout_height="150dp"
 	        android:contentDescription="TODO"
-	        android:src="@drawable/irma_temp_logo" />
+	        android:src="@drawable/irma_logo" />
 	
 	    <Button
 	        android:id="@+id/login_button"
@@ -59,6 +60,7 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="14dp"
 	        android:clickable="true"	        
+	        android:background="@drawable/round_button_small"
 	        android:text="Login" />
 	
 	</RelativeLayout>
