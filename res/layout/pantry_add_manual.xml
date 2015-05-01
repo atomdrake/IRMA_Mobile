@@ -2,6 +2,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
+  android:background="@drawable/brown_wood_texture"
   android:fillViewport="true">
 
 	<RelativeLayout
@@ -22,6 +23,8 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="19dp"
 	        android:ems="10"
+	        	        android:gravity="center"
+	        android:background="@drawable/rounded_edittext"
 	        android:hint="Ingredent Name" >
 
 	    </EditText>
@@ -34,6 +37,7 @@
 	        android:layout_alignParentRight="true"
 	        android:layout_marginBottom="17dp"
 	        android:layout_marginRight="36dp"
+	        android:background="@drawable/round_button_small"
 	        android:text="Cancel" />
 
 	    <Button
@@ -44,6 +48,7 @@
 	        android:layout_alignParentLeft="true"
 	        android:layout_marginBottom="17dp"
 	        android:layout_marginLeft="36dp"
+	        android:background="@drawable/round_button_small"
 	        android:text="Add" />
 
 	    <EditText
@@ -55,6 +60,8 @@
 	        android:layout_alignRight="@+id/Protein_field"
 	        android:layout_marginBottom="40dp"
 	        android:ems="10"
+	        android:gravity="center"
+	        android:background="@drawable/rounded_edittext"
 	        android:hint="Barcode" >
 
 	        <requestFocus />
@@ -69,6 +76,8 @@
 	        android:layout_alignRight="@+id/CancelButton"
 	        android:layout_marginBottom="17dp"
 	        android:ems="10"
+	        android:gravity="center"
+	        android:background="@drawable/rounded_edittext"
 	        android:hint="Protein" />
 
 	    <EditText
@@ -80,6 +89,8 @@
 	        android:layout_alignLeft="@+id/Carb_field"
 	        android:layout_alignRight="@+id/Make_Button"
 	        android:ems="10"
+	        android:gravity="center"
+	        android:background="@drawable/rounded_edittext"
 	        android:hint="Fat" />
 
 	    <EditText
@@ -91,6 +102,8 @@
 	        android:layout_alignLeft="@+id/Protein_field"
 	        android:layout_alignRight="@+id/Protein_field"
 	        android:ems="10"
+	        android:gravity="center"
+	        android:background="@drawable/rounded_edittext"
 	        android:hint="Alcohol" />
 
 	    <EditText
@@ -102,6 +115,8 @@
 	        android:layout_marginBottom="35dp"
 	        android:layout_toLeftOf="@+id/Quantity_field"
 	        android:ems="10"
+	        android:gravity="center"
+	        android:background="@drawable/rounded_edittext"
 	        android:hint="Aisle" />
 
 	    <EditText
@@ -112,6 +127,8 @@
 	        android:layout_alignRight="@+id/Aisle_field"
 	        android:layout_centerVertical="true"
 	        android:ems="10"
+	         android:gravity="center"
+	        android:background="@drawable/rounded_edittext"
 	        android:hint="Calorie" />
 
 	    <EditText
@@ -123,6 +140,8 @@
 	        android:layout_alignLeft="@+id/Alcohol_field"
 	        android:layout_alignRight="@+id/Barcode_field"
 	        android:ems="10"
+	        android:gravity="center"
+	        android:background="@drawable/rounded_edittext"
 	        android:hint="Quantity" />
 
 	    <EditText
@@ -133,6 +152,8 @@
 	        android:layout_below="@+id/Recipe_Name_field"
 	        android:layout_marginTop="24dp"
 	        android:ems="10"
+	        android:gravity="center"
+	        android:background="@drawable/rounded_edittext"
 	        android:hint="Carbohydrate" />
 	
 	</RelativeLayout>

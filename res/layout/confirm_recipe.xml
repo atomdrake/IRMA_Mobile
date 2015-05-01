@@ -2,6 +2,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
+  android:background="@drawable/brown_wood_texture"
   android:fillViewport="true">
 
 	<RelativeLayout
@@ -24,6 +25,7 @@
 	        android:longClickable="false"
 			android:clickable="false"
 	        android:ems="10"
+	        android:background="@drawable/rounded_edittext"
 	        android:hint="Recipe Name" >
 	    </EditText>
 
@@ -35,6 +37,7 @@
 	        android:layout_alignParentRight="true"
 	        android:layout_below="@+id/Steps_Field"
 	        android:layout_marginRight="36dp"
+	        android:background="@drawable/round_button_small"
 	        android:text="Cancel" />
 
 	    <Button
@@ -44,6 +47,7 @@
 	        android:layout_below="@+id/Steps_Field"
 	        android:layout_alignParentLeft="true"
 	        android:layout_marginLeft="36dp"
+	        android:background="@drawable/round_button_small"
 	        android:text="Make It" />
 
 	    <EditText
@@ -52,17 +56,20 @@
 	        android:layout_height="wrap_content"
 	        android:layout_alignLeft="@+id/Ingredients_Field"
 	        android:layout_below="@+id/Ingredients_Field"
+	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="24dp"
 	        android:ems="10"
 	        android:hint="Directions"
      	   	android:longClickable="false"
 			android:clickable="false"
+			android:background="@drawable/rounded_edittext"
 	        android:inputType="textMultiLine" />
 
 	    <EditText
 	        android:id="@+id/Ingredients_Field"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
 	        android:layout_alignLeft="@+id/Make_Button"
 	        android:layout_below="@+id/Recipe_Name_field"
 	        android:layout_marginTop="27dp"
@@ -70,6 +77,7 @@
 	        android:ems="10"
 	        android:hint="Ingredients"
 	        android:inputType="textMultiLine"
+	        android:background="@drawable/rounded_edittext"
 	        android:longClickable="false" />
 
 

@@ -2,6 +2,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
+  android:background="@drawable/brown_wood_texture"
   android:fillViewport="true">
 
 	<RelativeLayout 
@@ -19,6 +20,7 @@
 	        android:layout_alignParentTop="true"
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="58dp"
+	        android:background="@drawable/round_button_med"
 	        android:text="Scan" />
 
 	    <Button
@@ -28,6 +30,7 @@
 	        android:layout_below="@+id/Make_Button"
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="19dp"
+	        android:background="@drawable/round_button_med"
 	        android:text="Manual Entry" />
 	
 	</RelativeLayout>
