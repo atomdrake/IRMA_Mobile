@@ -1638,7 +1638,8 @@ containing a value of this type.
         public static final int left_arrow=0x7f020036;
         public static final int rectangle=0x7f020037;
         public static final int right_arrow=0x7f020038;
-        public static final int x=0x7f020039;
+        public static final int rounded_edittext=0x7f020039;
+        public static final int x=0x7f02003a;
     }
     public static final class id {
         public static final int Aisle_field=0x7f0a0069;

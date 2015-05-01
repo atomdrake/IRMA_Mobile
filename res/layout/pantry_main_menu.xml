@@ -22,6 +22,8 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="56dp"
 	        android:ems="10"
+	        android:gravity="center"
+	        android:background="@drawable/rounded_edittext"
 	        android:hint="Search..." >	
 
 	    </EditText>
