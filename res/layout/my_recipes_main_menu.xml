@@ -2,7 +2,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
-  android:background="@drawable/brown_wood_texture"
+  android:background="@drawable/light_brown_wood_texture"
   android:fillViewport="true">
 
 	<RelativeLayout
@@ -37,6 +37,8 @@
 	        android:layout_below="@+id/SearchTextField"
 	        android:layout_marginTop="170dp"
 	        android:background="@drawable/round_button_small"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Time" />
 
 	    <Button
@@ -47,6 +49,8 @@
 	        android:layout_below="@+id/SearchTextField"
 	        android:layout_marginTop="80dp"
 	        android:background="@drawable/round_button_small"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Type" />
 
 	    <Button
@@ -57,6 +61,8 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="36dp"
 	        android:background="@drawable/round_button_small"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Cuisine" />
 	
 	</RelativeLayout>

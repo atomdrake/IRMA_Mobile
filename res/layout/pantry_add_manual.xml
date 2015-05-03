@@ -2,7 +2,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
-  android:background="@drawable/brown_wood_texture"
+  android:background="@drawable/light_brown_wood_texture"
   android:fillViewport="true">
 
 	<RelativeLayout
@@ -23,7 +23,7 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="19dp"
 	        android:ems="10"
-	        	        android:gravity="center"
+	        android:gravity="center"
 	        android:background="@drawable/rounded_edittext"
 	        android:hint="Ingredent Name" >
 
@@ -38,6 +38,8 @@
 	        android:layout_marginBottom="17dp"
 	        android:layout_marginRight="36dp"
 	        android:background="@drawable/round_button_small"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Cancel" />
 
 	    <Button
@@ -49,6 +51,8 @@
 	        android:layout_marginBottom="17dp"
 	        android:layout_marginLeft="36dp"
 	        android:background="@drawable/round_button_small"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Add" />
 
 	    <EditText
@@ -112,11 +116,11 @@
 	        android:layout_height="wrap_content"
 	        android:layout_above="@+id/Calorie_field"
 	        android:layout_alignLeft="@+id/Carb_field"
+	        android:layout_alignRight="@+id/Fat_field"
 	        android:layout_marginBottom="35dp"
-	        android:layout_toLeftOf="@+id/Quantity_field"
+	        android:background="@drawable/rounded_edittext"
 	        android:ems="10"
 	        android:gravity="center"
-	        android:background="@drawable/rounded_edittext"
 	        android:hint="Aisle" />
 
 	    <EditText

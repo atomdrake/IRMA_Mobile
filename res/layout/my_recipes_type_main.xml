@@ -3,7 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
-  android:background="@drawable/brown_wood_texture"
+  android:background="@drawable/light_brown_wood_texture"
   android:fillViewport="true">
   
     
@@ -25,6 +25,8 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="48dp"
 	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Breakfast" />
 	
 	    <Button
@@ -35,6 +37,8 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="16dp"
 	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Lunch" />
 	
 	    <Button
@@ -45,6 +49,8 @@
 	        android:layout_below="@+id/Lunch_Button"
 	        android:layout_marginTop="20dp"
 	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Dinner" />
 	
 	    <Button
@@ -55,6 +61,8 @@
 	        android:layout_below="@+id/Dinner_Button"
 	        android:layout_marginTop="20dp"
 	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Dessert" />
 	
 	    <Button
@@ -65,6 +73,8 @@
 	        android:layout_below="@+id/Dessert_Button"
 	        android:layout_marginTop="17dp"
 	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Snack" />
 	
 	    <Button
@@ -75,6 +85,8 @@
 	        android:layout_below="@+id/Snack_Button"
 	        android:layout_marginTop="20dp"
 	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Other" />
 
 	</RelativeLayout>

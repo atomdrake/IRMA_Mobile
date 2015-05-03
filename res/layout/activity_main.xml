@@ -2,7 +2,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
-  android:background="@drawable/brown_wood_texture"
+  android:background="@drawable/light_brown_wood_texture"
   android:fillViewport="true">
 
 	<RelativeLayout 
@@ -49,7 +49,7 @@
 	        android:layout_width="150dp"
 	        android:layout_height="150dp"
 	        android:contentDescription="TODO"
-	        android:src="@drawable/irma_logo" />
+	        android:src="@drawable/chef_hat" />
 	
 	    <Button
 	        android:id="@+id/login_button"
@@ -59,7 +59,9 @@
 	        android:layout_below="@+id/password_field"
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="14dp"
-	        android:clickable="true"	        
+	        android:clickable="true"	    
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"    
 	        android:background="@drawable/round_button_small"
 	        android:text="Login" />
 	

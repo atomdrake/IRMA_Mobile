@@ -3,6 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
+  android:background="@drawable/light_brown_wood_texture"
   android:fillViewport="true">
   
     
@@ -23,6 +24,9 @@
 	        android:layout_alignParentTop="true"
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="48dp"
+	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="American" />
 	
 	    <Button
@@ -32,6 +36,9 @@
 	        android:layout_below="@+id/American_Button"
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="16dp"
+	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Mexican" />
 	
 	    <Button
@@ -41,6 +48,9 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_below="@+id/Mexican_Button"
 	        android:layout_marginTop="20dp"
+	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Italian" />
 	
 	    <Button
@@ -50,6 +60,9 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_below="@+id/Italian_Button"
 	        android:layout_marginTop="20dp"
+	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="French" />
 	
 	    <Button
@@ -59,6 +72,9 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_below="@+id/French_Button"
 	        android:layout_marginTop="17dp"
+	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Indian" />
 	
 	    <Button
@@ -68,6 +84,9 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_below="@+id/Indian_Button"
 	        android:layout_marginTop="20dp"
+	        android:background="@drawable/round_button_med"
+	        android:textStyle="bold" 
+        	android:textColor="#ffffff"  
 	        android:text="Other Cuisine" />
 
 	</RelativeLayout>
