@@ -33,7 +33,7 @@ public class MainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MainMenu.this, "Access All Recipes...", Toast.LENGTH_LONG).show();		
+			//Toast.makeText(MainMenu.this, "Access All Recipes...", Toast.LENGTH_LONG).show();		
 			
 			Intent i = new Intent(MainMenu.this, AllRecipeMainMenu.class);
 			startActivity(i);
@@ -47,7 +47,7 @@ public class MainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MainMenu.this, "Access the user's recipe menu", Toast.LENGTH_LONG).show();	
+			//Toast.makeText(MainMenu.this, "Access the user's recipe menu", Toast.LENGTH_LONG).show();	
 			
 			Intent i = new Intent(MainMenu.this, MyRecipeMainMenu.class);
 			startActivity(i);
@@ -62,7 +62,7 @@ public class MainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(MainMenu.this, "Access the user's pantry menu", Toast.LENGTH_LONG).show();		
+			//Toast.makeText(MainMenu.this, "Access the user's pantry menu", Toast.LENGTH_LONG).show();		
 			
 			Intent i = new Intent(MainMenu.this, PantryMainMenu.class);
 			startActivity(i);

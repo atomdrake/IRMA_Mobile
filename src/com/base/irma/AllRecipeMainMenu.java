@@ -38,7 +38,7 @@ public class AllRecipeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(AllRecipeMainMenu.this, "Display all recipes by type...", Toast.LENGTH_LONG).show();	
+			//Toast.makeText(AllRecipeMainMenu.this, "Display all recipes by type...", Toast.LENGTH_LONG).show();	
 			Intent i = new Intent(AllRecipeMainMenu.this, AllRecipeTypeMainMenu.class);
 			startActivity(i);
 		
@@ -52,7 +52,7 @@ public class AllRecipeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(AllRecipeMainMenu.this, "Display all recipes by time...", Toast.LENGTH_LONG).show();		
+			//Toast.makeText(AllRecipeMainMenu.this, "Display all recipes by time...", Toast.LENGTH_LONG).show();		
 			
 			}
 		});// End TimeButton Button
@@ -62,7 +62,7 @@ public class AllRecipeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(AllRecipeMainMenu.this, "Display all recipes by region...", Toast.LENGTH_LONG).show();	
+			//Toast.makeText(AllRecipeMainMenu.this, "Display all recipes by region...", Toast.LENGTH_LONG).show();	
 			Intent i = new Intent(AllRecipeMainMenu.this, AllRecipeCuisineMainMenu.class);
 			startActivity(i);
 			

@@ -41,7 +41,7 @@ public class AllRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(AllRecipeTypeMainMenu.this, "Display Breakfast Recipes...", Toast.LENGTH_LONG).show();	
+		//	Toast.makeText(AllRecipeTypeMainMenu.this, "Display Breakfast Recipes...", Toast.LENGTH_LONG).show();	
 			
 			TypeSelected = "Breakfast";
 			
@@ -59,7 +59,7 @@ public class AllRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(AllRecipeTypeMainMenu.this, "Display Lunch Recipes...", Toast.LENGTH_LONG).show();	
+		//	Toast.makeText(AllRecipeTypeMainMenu.this, "Display Lunch Recipes...", Toast.LENGTH_LONG).show();	
 			
 			TypeSelected = "Lunch";
 			
@@ -75,7 +75,7 @@ public class AllRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(AllRecipeTypeMainMenu.this, "Display Dinner Recipes...", Toast.LENGTH_LONG).show();		
+		//	Toast.makeText(AllRecipeTypeMainMenu.this, "Display Dinner Recipes...", Toast.LENGTH_LONG).show();		
 			
 			TypeSelected = "Dinner";
 			
@@ -91,7 +91,7 @@ public class AllRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(AllRecipeTypeMainMenu.this, "Display Dessert Recipes...", Toast.LENGTH_LONG).show();	
+		//	Toast.makeText(AllRecipeTypeMainMenu.this, "Display Dessert Recipes...", Toast.LENGTH_LONG).show();	
 			
 			TypeSelected = "Dessert";
 			
@@ -107,7 +107,7 @@ public class AllRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(AllRecipeTypeMainMenu.this, "Display Snack Recipes...", Toast.LENGTH_LONG).show();	
+		//	Toast.makeText(AllRecipeTypeMainMenu.this, "Display Snack Recipes...", Toast.LENGTH_LONG).show();	
 			
 			TypeSelected = "Snack";
 			
@@ -123,7 +123,7 @@ public class AllRecipeTypeMainMenu extends MainActivity {
 			@Override
 			public void onClick(View v) {
 
-			Toast.makeText(AllRecipeTypeMainMenu.this, "Display Other Recipes...", Toast.LENGTH_LONG).show();		
+		//	Toast.makeText(AllRecipeTypeMainMenu.this, "Display Other Recipes...", Toast.LENGTH_LONG).show();		
 			
 			TypeSelected = "Other";
 			
