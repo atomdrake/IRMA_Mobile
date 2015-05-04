@@ -180,10 +180,10 @@ public class RecipeDisplay extends MainActivity {
 		//Example test data
 		String RecipeName = "Chicken Fried Bacon";
 		
-		String Ingredients1 = "vegetable oil";
-		String Ingredients2 = "Bacon" + "\n" + "all-purpose flour";
-		String Ingredients3 = "Bacon" + "\n" + "vegetable oil" ;
-		String Ingredients4 = "Bacon" + "\n" + "salt" + "\n" + "ground black pepper";
+		String Ingredients1 = "vegetable oil 5 C";
+		String Ingredients2 = "Bacon 1 lb" + "\n" + "all-purpose flour 3 C";
+		String Ingredients3 = "Bacon 1 lb" + "\n" + "vegetable oil 5 C" ;
+		String Ingredients4 = "Bacon 1 lb" + "\n" + "salt 1 tb" + "\n" + "ground black pepper 1 tb";
 		
 		
 		String Directions1 = "Heat vegetable oil in a large skillet on medium-high heat." ;
