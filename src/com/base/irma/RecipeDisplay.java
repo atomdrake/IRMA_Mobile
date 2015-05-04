@@ -58,7 +58,7 @@ public class RecipeDisplay extends MainActivity {
 				
 			
 				//If there are more steps to display then display them
-				if(CurrentStepNumber != MaxStepsInRecipe){
+				if(CurrentStepNumber != MaxStepsInRecipe ){
 					
 					GoToNextStep();
 					
@@ -133,8 +133,16 @@ public class RecipeDisplay extends MainActivity {
 	private void GoToPreviousStep() {
 		
 		
+		Ingredients_Field.setText(IngredientsInStep[CurrentStepNumber-2]);  	
+		Directions_Field.setText(DirectionsForStep[CurrentStepNumber-2]);
+
+		
 		//Make sure to decrement the currentstepnumber
 		CurrentStepNumber--;
+		
+		//Update step number
+		String Steps = "Step: " + CurrentStepNumber;
+		StepNumber_Field.setText(Steps);
 		
 	}
 
@@ -146,8 +154,16 @@ public class RecipeDisplay extends MainActivity {
 	private void GoToNextStep() {
 		
 
-		//Make sure to increment the currentstepnumber...
-		CurrentStepNumber++;
+		Ingredients_Field.setText(IngredientsInStep[CurrentStepNumber]);  	
+		Directions_Field.setText(DirectionsForStep[CurrentStepNumber]);		
+		
+		
+		//Make sure to increment the currentstepnumber...		
+		CurrentStepNumber++;		
+		
+		//update step number
+		String Steps = "Step: " + CurrentStepNumber;
+		StepNumber_Field.setText(Steps);
 	}
 	
 
@@ -164,38 +180,40 @@ public class RecipeDisplay extends MainActivity {
 		//Example test data
 		String RecipeName = "Chicken Fried Bacon";
 		
-		String Ingredients = "Bacon 1 Lb" + "\n" + "All purpose flour 3 cups" + "\n" + "Vegetable oil 4 cups" + "\n" + "Salt and Pepper";
+		String Ingredients1 = "vegetable oil";
+		String Ingredients2 = "Bacon" + "\n" + "all-purpose flour";
+		String Ingredients3 = "Bacon" + "\n" + "vegetable oil" ;
+		String Ingredients4 = "Bacon" + "\n" + "salt" + "\n" + "ground black pepper";
 		
 		
-		String Directions = "Heat oil to 375 degrees in a large skillet" ;
-		
-		
-		
-			//+ "\n" + "Coat the bacon with the flour" + "\n" + 
-			//				"Fry the bacon in the oil untill crispy" + "\n" + "Sprinkle on salt and peper to taste" + "\n" + 
-			//						"Enjoy";
-		
-		
-		
-		
-		
-		
-		
+		String Directions1 = "Heat vegetable oil in a large skillet on medium-high heat." ;
+		String Directions2 = "Coat the Bacon with the all-purpose flour." ;
+		String Directions3 = "Fry the Bacon in the vegetable oil until golden brown." ;
+		String Directions4 = "Allow Bacon to cool and sprinkle with salt and ground black pepper to taste." ;		
 		
 		
 		//Set the step string up
 		String Steps = "Step: " + CurrentStepNumber;
 		
 		//Make sure to update MaxStepsInRecipe!
-		MaxStepsInRecipe = 1;
+		MaxStepsInRecipe = 4;
 		
 		//Declare the size of our string arrays
 		DirectionsForStep = new String[MaxStepsInRecipe];  
 		IngredientsInStep = new String[MaxStepsInRecipe];		
 		
 		//Populate with example test data
-		DirectionsForStep[0] = Directions;
-		IngredientsInStep[0] = Ingredients;
+		DirectionsForStep[0] = Directions1;
+		IngredientsInStep[0] = Ingredients1;
+		
+		DirectionsForStep[1] = Directions2;
+		IngredientsInStep[1] = Ingredients2;
+		
+		DirectionsForStep[2] = Directions3;
+		IngredientsInStep[2] = Ingredients3;
+		
+		DirectionsForStep[3] = Directions4;
+		IngredientsInStep[3] = Ingredients4;
 		
 		
 		//Set the text in the fields
