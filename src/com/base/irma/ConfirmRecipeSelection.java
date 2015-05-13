@@ -24,8 +24,8 @@ public class ConfirmRecipeSelection extends MainActivity {
 	EditText Directions_Field;
 	
 	//Store the recipe we select so we can pull it for display on the next screen
-	static int SelectedRecipeIDNumber;	
-	static String selectedRecipe = " ";   //This is the string to pass to the RecipeDisplay activity
+	public static int SelectedRecipeIDNumber;	
+	public static String selectedRecipe = " ";   //This is the string to pass to the RecipeDisplay activity
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -88,7 +88,7 @@ public class ConfirmRecipeSelection extends MainActivity {
 	//Remember the recipe ID is being stored in SelectedRecipeIDNumber
 	private void populate_text_fields() {
 		// TODO Auto-generated method stub
-	    Log.i("my main message", "WTF?");
+	    //Log.i("my main message", "WTF?");
 		JSONArray newArray;
 		String masterDirections = "";
 		String masterIngredients = "";
@@ -97,16 +97,20 @@ public class ConfirmRecipeSelection extends MainActivity {
 		String RecipeName = " ";
 		
 		if(!MyTypeRecipeSelection.selectedRecipe.equals(" ")){
-			 RecipeName = MyTypeRecipeSelection.selectedRecipe;
+			selectedRecipe = MyTypeRecipeSelection.selectedRecipe;
+			 SelectedRecipeIDNumber = MyTypeRecipeSelection.SelectedRecipeIDNumber;
 		}
 		else if( !AllTypeRecipeSelection.selectedRecipe.equals(" ")){
-			 RecipeName = AllTypeRecipeSelection.selectedRecipe;			
+			selectedRecipe = AllTypeRecipeSelection.selectedRecipe;	
+			 SelectedRecipeIDNumber = AllTypeRecipeSelection.SelectedRecipeIDNumber;
 		}
 		else if( !MyCuisineRecipeSelection.selectedRecipe.equals(" ")){
-			 RecipeName = MyCuisineRecipeSelection.selectedRecipe;			
+			selectedRecipe = MyCuisineRecipeSelection.selectedRecipe;		
+			 SelectedRecipeIDNumber = MyCuisineRecipeSelection.SelectedRecipeIDNumber;
 		}
 		else if( !AllCuisineRecipeSelection.selectedRecipe.equals(" ")){
-			 RecipeName = AllCuisineRecipeSelection.selectedRecipe;			
+			selectedRecipe = AllCuisineRecipeSelection.selectedRecipe;		
+			 SelectedRecipeIDNumber = AllCuisineRecipeSelection.SelectedRecipeIDNumber;
 		}		
 		
 		

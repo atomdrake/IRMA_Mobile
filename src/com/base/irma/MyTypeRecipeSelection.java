@@ -30,7 +30,7 @@ public class MyTypeRecipeSelection extends MainActivity {
 	String TypeToQuery = MyRecipeTypeMainMenu.TypeSelected;   //TypeSelected in the previous menu
 	
 	//Store the recipe we select so we can pull it for display on the next screen
-	static int SelectedRecipeIDNumber;	
+	public static int SelectedRecipeIDNumber;	
 	static String selectedRecipe = "";
 	//The listView we'll associate with the recipe ListView on the page
 	ListView RecipeList;

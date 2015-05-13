@@ -47,6 +47,13 @@ public class RecipeDisplay extends MainActivity {
 		Directions_Field = (EditText) findViewById(R.id.Steps_Field);
 		StepNumber_Field = (EditText) findViewById(R.id.StepNumber);
 		
+		RecipeDisplay_DB(MainActivity.Username);
+		try {				
+			Thread.sleep(1000);
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}	
+		
 		
 	
 		//If there is a next step go to it
@@ -72,7 +79,7 @@ public class RecipeDisplay extends MainActivity {
 			}
 		});// End NextButton Button
 		
-		
+
 		
 		
 		//If there is a previous step go to it
@@ -102,6 +109,7 @@ public class RecipeDisplay extends MainActivity {
 		});// End PreviousButton Button
 		
 		
+		
 		//We cancel out of the recipe selection screen and go back to confirm screen
 		CancelButton.setOnClickListener(new View.OnClickListener() {
 			
@@ -125,6 +133,13 @@ public class RecipeDisplay extends MainActivity {
 		
 	}//End onCreate
 	
+	public void RecipeDisplay_DB(String user)
+	{
+		
+		new RecipeDisplay_DB(this).execute(user);
+	}
+
+
 
 
 	//Pull and / or display the data for the previous step
@@ -173,53 +188,112 @@ public class RecipeDisplay extends MainActivity {
 	//steps at this time in MaxStepsInRecipe for sure...
 	private void populate_text_fields() {
 
-	
+		JSONArray newArray;
 		//Recipe to use is stored in ConfirmRecipeSelection.selectedRecipe.
 		
 		
 		//Example test data
-		String RecipeName = "Chicken Fried Bacon";
-		
-		String Ingredients1 = "vegetable oil 5 C";
-		String Ingredients2 = "Bacon 1 lb" + "\n" + "all-purpose flour 3 C";
-		String Ingredients3 = "Bacon 1 lb" + "\n" + "vegetable oil 5 C" ;
-		String Ingredients4 = "Bacon 1 lb" + "\n" + "salt 1 tb" + "\n" + "ground black pepper 1 tb";
+		String RecipeName = ConfirmRecipeSelection.selectedRecipe;
 		
 		
-		String Directions1 = "Heat vegetable oil in a large skillet on medium-high heat." ;
-		String Directions2 = "Coat the Bacon with the all-purpose flour." ;
-		String Directions3 = "Fry the Bacon in the vegetable oil until golden brown." ;
-		String Directions4 = "Allow Bacon to cool and sprinkle with salt and ground black pepper to taste." ;		
+		//String Ingredients1 = "vegetable oil 5 C";
+		//String Ingredients2 = "Bacon 1 lb" + "\n" + "all-purpose flour 3 C";
+		//String Ingredients3 = "Bacon 1 lb" + "\n" + "vegetable oil 5 C" ;
+		//String Ingredients4 = "Bacon 1 lb" + "\n" + "salt 1 tb" + "\n" + "ground black pepper 1 tb";
+		
+		
+		
+		try {
+			newArray = new JSONArray(RecipeDisplay_DB.jsonResponse);
+			MaxStepsInRecipe = newArray.length();
+			DirectionsForStep = new String[MaxStepsInRecipe];  
+			//IngredientsInStep = new String[MaxStepsInRecipe];	
+			
+			for (int i = 0; i < newArray.length(); i++) 
+			{
+				String contents = "";
+        	    JSONObject jsonobject = newArray.getJSONObject(i);        	    
+        	    try
+        	    {
+	        	   	        	
+	        	    contents = jsonobject.getString("Contents");       
+	        	    DirectionsForStep[i] = contents;
+        	    }    catch (JSONException e){}
+
+        	}
+			
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			newArray = new JSONArray(RecipeDisplay_DB.jsonResponse2);	
+			IngredientsInStep = new String[MaxStepsInRecipe];	
+			
+			for (int i = 0; i < newArray.length(); i++) 
+			{
+				int DirNum = 0;
+				String Item = "";
+        	    JSONObject jsonobject = newArray.getJSONObject(i);        	    
+        	    try
+        	    {
+	        	   	        	
+	        	    DirNum = Integer.parseInt(jsonobject.getString("DirectionNumber"));
+	        	    Item = jsonobject.getString("Item");
+	        	    
+        	    }    catch (JSONException e){}
+        	    if(IngredientsInStep[DirNum] != null)
+        	    {
+        	    	IngredientsInStep[DirNum] = Item;
+        	    }
+        	    else
+        	    {
+        	    	IngredientsInStep[DirNum] += "\n " + Item;
+        	    }
+        	}
+			
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+          
+		//String Directions1 = "Heat vegetable oil in a large skillet on medium-high heat." ;
+		//String Directions2 = "Coat the Bacon with the all-purpose flour." ;
+		//String Directions3 = "Fry the Bacon in the vegetable oil until golden brown." ;
+		//String Directions4 = "Allow Bacon to cool and sprinkle with salt and ground black pepper to taste." ;		
 		
 		
 		//Set the step string up
 		String Steps = "Step: " + CurrentStepNumber;
 		
 		//Make sure to update MaxStepsInRecipe!
-		MaxStepsInRecipe = 4;
+		
 		
 		//Declare the size of our string arrays
-		DirectionsForStep = new String[MaxStepsInRecipe];  
-		IngredientsInStep = new String[MaxStepsInRecipe];		
+	
 		
 		//Populate with example test data
-		DirectionsForStep[0] = Directions1;
-		IngredientsInStep[0] = Ingredients1;
 		
-		DirectionsForStep[1] = Directions2;
-		IngredientsInStep[1] = Ingredients2;
+		//DirectionsForStep[0] = Directions1;
+		//IngredientsInStep[0] = Ingredients1;
 		
-		DirectionsForStep[2] = Directions3;
-		IngredientsInStep[2] = Ingredients3;
+		//DirectionsForStep[1] = Directions2;
+		//IngredientsInStep[1] = Ingredients2;
 		
-		DirectionsForStep[3] = Directions4;
-		IngredientsInStep[3] = Ingredients4;
+		//DirectionsForStep[2] = Directions3;
+	//	IngredientsInStep[2] = Ingredients3;
+		
+		//DirectionsForStep[3] = Directions4;
+	//	IngredientsInStep[3] = Ingredients4;
 		
 		
 		//Set the text in the fields
 		Recipe_Name_Field.setText(RecipeName);				//Won't Change
-		Ingredients_Field.setText(IngredientsInStep[0]);  	//Will be IngredientsInStep[CurrentStepNumber-1]
-		Directions_Field.setText(DirectionsForStep[0]);   	//Will be DirectionsForStep[CurrentStepNumber-1]
+		Ingredients_Field.setText(IngredientsInStep[CurrentStepNumber]);  	//Will be IngredientsInStep[CurrentStepNumber-1]
+		Directions_Field.setText(DirectionsForStep[CurrentStepNumber-1]);   	//Will be DirectionsForStep[CurrentStepNumber-1]
 		StepNumber_Field.setText(Steps);					//Populated above
 		
 		//Set the text fields to be uneditable by user.
@@ -228,8 +302,7 @@ public class RecipeDisplay extends MainActivity {
 		Directions_Field.setKeyListener(null);
 		StepNumber_Field.setKeyListener(null);
 		
-
-		
+	
 		
 	}
 	
